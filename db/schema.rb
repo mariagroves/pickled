@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_135645) do
+ActiveRecord::Schema.define(version: 2019_11_18_142208) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "post_options", force: :cascade do |t|
+    t.string "type"
+    t.string "image"
+    t.text "content"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_options_on_post_id"
+  end
+
+  create_table "post_votes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_option_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_option_id"], name: "index_post_votes_on_post_option_id"
+    t.index ["user_id"], name: "index_post_votes_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -40,5 +60,8 @@ ActiveRecord::Schema.define(version: 2019_11_18_135645) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "post_options", "posts"
+  add_foreign_key "post_votes", "post_options"
+  add_foreign_key "post_votes", "users"
   add_foreign_key "posts", "users"
 end
