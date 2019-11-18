@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <%= simple_form_for(@post) do |f| %>
+        <% if @post.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.submit "Add!" %>
+      <% end %>
+    </div>
+  </div>
+</div>
