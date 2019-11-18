@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all
   end
@@ -43,6 +43,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:text, :description)
+    params.require(:post).permit(:title, :description)
   end
 end
