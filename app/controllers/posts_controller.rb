@@ -10,13 +10,14 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.post_options.build
   end
 
   def create
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to new_post_post_option_path(@post)
+      redirect_to post_path(@post)
     else
       render :new
     end
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to new_post_post_option_path(@post)
+      redirect_to post_path(@post)
     else
       render :edit
     end
@@ -45,9 +46,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(
-      :title, :description,
-      post_option_attributes: [:cateogory, :image, :content]
-      )
+    params.require(:post).permit(:title, :description,
+      post_options_attributes: [:id, :kind, :image, :content])
   end
 end
