@@ -36,11 +36,13 @@ puts "Creating posts..."
 post1 = Post.new(
   title: "In a fix need help",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere!",
+  kind: "text"
 )
 
 post2 = Post.new(
   title: "Help me!!!!",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere!",
+  kind: "image"
 )
 
 post1.user = user2
