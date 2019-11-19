@@ -1,1 +1,8 @@
 <h1>This is the post options page</h1>
+<p>Select the type of post</p>
+<%= simple_form_for [@post, @post_option] do |f| %>
+  <%= f.input :type, :collection => %w[text image] %>
+  <%= f.input :content, :as => :string %>
+  <%= f.file_field :images, multiple: true %>
+  <%= f.submit "Add!" %>
+<% end %>

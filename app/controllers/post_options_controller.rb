@@ -1,5 +1,6 @@
 class PostOptionsController < ApplicationController
   def new
+    @post = Post.find(params[:post_id])
     @post_option = PostOption.new
   end
 
