@@ -11,20 +11,20 @@
             </ul>
           </div>
         <% end %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :kind, :collection => %w[text image] %>
+        <%= f.input :title, label: "What's your pickle?"  %>
+        <%= f.input :description,label: 'Describe it'  %>
+        <%= f.input :kind, label: 'What kind of post is this?', :collection => %w[text photo] %>
           <%= f.simple_fields_for :post_options do |p| %>
-            <%= p.input :content, :as => :string %>
-            <%= p.input :image %>
+            <%= p.input :content, :as => :string, label: 'First option'%>
+            <%= p.input :image, label: 'First option' %>
             <%= p.input :image_cache, as: :hidden %>
           <% end %>
           <%= f.simple_fields_for :post_options do |p| %>
-            <%= p.input :content, :as => :string %>
-            <%= p.input :image %>
+            <%= p.input :content, :as => :string, label: 'Second option' %>
+            <%= p.input :image, label: 'Second option' %>
             <%= p.input :image_cache, as: :hidden %>
           <% end %>
-        <%= f.submit "Add!" %>
+        <%= f.submit "Share" %>
       <% end %>
     </div>
   </div>
