@@ -32,6 +32,6 @@ class PostOptionsController < ApplicationController
   private
 
   def option_params
-    params.require(:post_option).permit(:category, :image, :content)
+    params.require(:post_option).permit(:kind, :image, :content)
   end
 end
