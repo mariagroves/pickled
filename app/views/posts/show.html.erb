@@ -3,6 +3,15 @@
     <div class="col-md-6 offset-sm-4">
       <h2><%= @post.title %></h2>
       <p><%= @post.description %></p>
+      <% if @post.post_options.first.content.empty? %>
+        <% @post.post_options.each do |option| %>
+          <%= image_tag option.image.url(:showsmall) %>
+        <% end %>
+      <% else %>
+        <% @post.post_options.each do |option| %>
+         <%= option.content %>
+        <% end %>
+      <% end %>
       <p><%= link_to "Edit the Post", edit_post_path %></p>
       <%= link_to "Back to list", posts_path %>
     </div>
