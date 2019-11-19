@@ -1,7 +1,7 @@
 <h1>This is the post options page</h1>
 <p>Select the type of post</p>
 <%= simple_form_for [@post, @post_option] do |f| %>
-  <%= f.input :category, :collection => %w[text image] %>
+  <%= f.input :kind, :collection => %w[text image] %>
   <%= f.input :content, :as => :string %>
   <%= f.input :image %>
   <%= f.input :image_cache, as: :hidden %>
