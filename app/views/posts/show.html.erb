@@ -3,13 +3,15 @@
     <div class="col-md-6 offset-sm-4">
       <h2><%= @post.title %></h2>
       <p><%= @post.description %></p>
-      <% if @post.post_options.first.content.empty? %>
+      <% if @post.kind == "photo" %>
         <% @post.post_options.each do |option| %>
-          <%= image_tag option.image.url(:showsmall) %>
+          <%= link_to post_post_option_post_votes_path(@post, option), method: :post do %>
+            <%= cl_image_tag option.image.url(:showsmall) %>
+          <% end %>
         <% end %>
       <% else %>
         <% @post.post_options.each do |option| %>
-         <%= option.content %>
+          <%= link_to option.content, post_post_option_post_votes_path(@post, option), method: :post %>
         <% end %>
       <% end %>
       <p><%= link_to "Edit the Post", edit_post_path %></p>
@@ -27,4 +29,5 @@
     </div>
   </div>
 </div>
+
 
