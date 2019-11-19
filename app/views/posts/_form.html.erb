@@ -13,14 +13,13 @@
         <% end %>
         <%= f.input :title %>
         <%= f.input :description %>
+        <%= f.input :kind, :collection => %w[text image] %>
           <%= f.simple_fields_for :post_options do |p| %>
-            <%= p.input :kind, :collection => %w[text image] %>
             <%= p.input :content, :as => :string %>
             <%= p.input :image %>
             <%= p.input :image_cache, as: :hidden %>
           <% end %>
           <%= f.simple_fields_for :post_options do |p| %>
-            <%= p.input :kind, :collection => %w[text image] %>
             <%= p.input :content, :as => :string %>
             <%= p.input :image %>
             <%= p.input :image_cache, as: :hidden %>
