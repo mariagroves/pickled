@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post_option = PostOption.new
   end
 
   def new
