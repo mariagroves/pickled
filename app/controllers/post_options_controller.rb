@@ -1,5 +1,6 @@
 class PostOptionsController < ApplicationController
   def new
+    @post = Post.find(params[:post_id])
     @post_option = PostOption.new
   end
 
@@ -31,6 +32,6 @@ class PostOptionsController < ApplicationController
   private
 
   def option_params
-    params.require(:post_option).permit(:type, :image, :content)
+    params.require(:post_option).permit(:kind, :image, :content)
   end
 end
