@@ -25,7 +25,7 @@
                <%= render 'comments/show', comment: comment %>
             <% end %>
         <% end %>
-        <%= render 'comments/form', post: @post, comment: @comment %>
+        <%= render 'comments/form', post: @post, comment: Comment.new %>
     </div>
   </div>
 </div>
