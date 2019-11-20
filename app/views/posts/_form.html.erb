@@ -14,16 +14,22 @@
         <%= f.input :title, label: "What's your pickle?"  %>
         <%= f.input :description,label: 'Describe it'  %>
         <%= f.input :kind, label: 'What kind of post is this?', :collection => %w[photo text], include_blank: false, input_html: { id: 'dropdown'} %>
-          <%= f.simple_fields_for :post_options do |p| %>
-            <%= p.input :content, :as => :string, label: 'First option' %>
-            <%= p.input :image, label: 'First option' %>
-            <%= p.input :image_cache, as: :hidden %>
-          <% end %>
-          <%= f.simple_fields_for :post_options do |p| %>
-            <%= p.input :content, :as => :string, label: 'Second option' %>
-            <%= p.input :image, label: 'Second option' %>
-            <%= p.input :image_cache, as: :hidden %>
-          <% end %>
+        <%= f.simple_fields_for :post_options do |p| %>
+          <%= p.input :content, :as => :string, label: 'First option' %>
+          <%= p.input :image, label: 'First option' %>
+          <%= p.input :image_cache, as: :hidden %>
+        <% end %>
+        <%= f.simple_fields_for :post_options do |p| %>
+          <%= p.input :content, :as => :string, label: 'Second option' %>
+          <%= p.input :image, label: 'Second option' %>
+          <%= p.input :image_cache, as: :hidden %>
+        <% end %>
+        <%#= f.simple_fields_for :categories do |p| %>
+          <h6>Choose category</h6>
+          <%= f.association :categories, as: :check_boxes %>
+          <%#= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+          <!-- f.collection_check_boxes :role_ids, Role.all, :id, :name # using :roles here is not going to work. -->
+        <%# end %>
         <%= f.submit "Share" %>
       <% end %>
     </div>

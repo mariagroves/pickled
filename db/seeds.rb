@@ -34,15 +34,15 @@ puts "Creating posts..."
 
 
 post1 = Post.new(
-  title: "In a fix need help",
+  title: "Which chair should I buy for my livingroom?",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere!",
-  kind: "text"
+  kind: "text",
 )
 
 post2 = Post.new(
-  title: "Help me!!!!",
+  title: "I only have one postcard left from my trip to India",
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere!",
-  kind: "image"
+  kind: "text",
 )
 
 post1.user = user2
@@ -52,5 +52,27 @@ post1.save!
 post2.save!
 
 puts "Finished creating posts"
+
+category1 = Category.new(
+  name: "Lifestyle"
+)
+
+
+category1.save!
+
+post_category1 = PostCategory.new
+post_category1.post = post1
+post_category1.category = category1
+post_category1.save!
+
+category2 = Category.new(
+  name: "Food"
+)
+category2.save!
+post_category2 = PostCategory.new
+post_category2.post = post2
+post_category2.category = category2
+post_category2.save!
+
 
 
