@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def show
     @post_vote = PostVote.new
     @post_option = PostOption.new
+
   end
 
   def new
