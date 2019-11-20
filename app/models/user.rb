@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :post_votes, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  has_many :comments
   validates :username, presence: true
   # validates :image, presence: true
   validates :bio, presence: true
@@ -9,4 +9,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def vote_count
+    post_votes.count
+  end
 end
