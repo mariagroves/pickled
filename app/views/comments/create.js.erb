@@ -1,0 +1,23 @@
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_comment');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addComment(reviewHTML) {
+  const comments = document.getElementById('comments');
+  comments.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+function removeMessage() {
+  const message = document.getElementById("message").remove();
+}
+
+<% if @comment.errors.any? %>
+  refreshForm('<%= j render "comments/form", post: @post, comment: @comment %>');
+<% else %>
+  <% if @post.comments.length == 1 %>
+    removeMessage();
+  <% end %>
+    addComment('<%= j render "comments/show", comment: @comment %>');
+    refreshForm('<%= j render "comments/form", post: @post, comment: Comment.new %>');
+<% end %>
