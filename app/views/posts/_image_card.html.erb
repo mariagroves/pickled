@@ -1,25 +1,24 @@
 <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
   <div class="card">
 
-    <div class="card__side card__side--front card__side--front-1">
+     <div class="card__side card__side--front card__side--front-1">
       <div class="card__description">
         <%= cl_image_tag option.image, width: 400, height: 200, crop: :fill %>
       </div>
     </div>
-
     <div class="card__side card__side--back card__side--back-1 h-100">
       <div class="card__description h-100">
         <div class="py-4 h-100">
-          <!-- if user already voted -->
+          <% if current_user.has_voted?(post) %>
             <%= "#{option.post.post_votes.count} votes" %>
-            <svg width="24" height="24" viewBox="0 0 24 24">
+              <svg width="24" height="24" viewBox="0 0 24 24">
               <path d="show"></path>
             </svg>
-          <!-- else  -->
-            <!-- some message -->
+            <% else %>
+              <p>pls vote</p>
+          <% end %>
         </div>
       </div>
     </div>
-
   </div>
 <% end %>

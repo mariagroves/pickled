@@ -13,4 +13,10 @@ class User < ApplicationRecord
   def vote_count
     post_votes.count
   end
+
+  def has_voted?(post)
+    # returns true if the user has a post vote for a post option of this post
+    post_votes.where(post_option: post.post_options).any?
+    # else returns false
+  end
 end
