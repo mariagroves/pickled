@@ -1,17 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-sm-4">
+
       <h2><%= @post.title %></h2>
       <p><%= @post.description %></p>
+      <!-- add if after making card work -->
       <% if @post.kind == "photo" %>
         <% @post.post_options.each do |option| %>
+        <!-- insert form here -->
           <%= link_to post_post_option_post_votes_path(@post, option), method: :post do %>
             <%= cl_image_tag option.image.url(:showsmall) %>
           <% end %>
         <% end %>
       <% else %>
         <% @post.post_options.each do |option| %>
-          <%= link_to option.content, post_post_option_post_votes_path(@post, option), method: :post %>
+        <!-- insert form here -->
+        <%= link_to option.content, post_post_option_post_votes_path(@post, option), method: :post %>
         <% end %>
       <% end %>
       <p><%= link_to "Edit the Post", edit_post_path %></p>
@@ -31,3 +35,21 @@
 </div>
 
 
+<section class="content">
+  <h2><%= @post.title %></h2>
+  <p><%= @post.description %></p>
+  <div class="cards">
+    <% @post.post_options.each do |option| %>
+      <%= render 'card', post: @post, option: option %>
+    <% end %>
+  </div>
+  <h3>Comments</h3>
+        <% if @post.comments.empty? %>
+          <p id="message">There are no comments for this post!</p>
+        <% else %>
+            <% @post.comments.each do |comment| %>
+               <%= render 'comments/show', comment: comment %>
+            <% end %>
+        <% end %>
+  <%= render 'comments/form', post: @post, comment: Comment.new %>
+</section>
