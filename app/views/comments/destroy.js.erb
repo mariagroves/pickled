@@ -1,0 +1,6 @@
+<% post = @comment.post %>
+
+document.getElementById("comment-<%= @comment.id %>").remove();
+<% if post.comments.empty? %>
+  document.getElementById("comments").insertAdjacentHTML('beforeend', '<span>There are no comments for this post!</span>');
+<% end %>
