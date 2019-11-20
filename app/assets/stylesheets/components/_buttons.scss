@@ -10,3 +10,37 @@
   text-color: white;
   background-color: #1EDD88;
 }
+
+
+.big-button-fill {
+  font-family: $my-font;
+  font-size: 20px;
+  line-height: 23px;
+  width: 152px;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: $black;
+  color: white;
+  border-radius: $border-radius;
+}
+
+.button-search {
+  width: 34px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  text-align: center;
+  background-color: white;
+  color: $black;
+  border-radius: $border-radius;
+}
+
+.button-filter {
+  width: 34px;
+  padding: 5px 10px;
+  margin-left: 10px;
+
+  text-align: center;
+  background-color: white;
+  color: $black;
+  border-radius: $border-radius;
+}
