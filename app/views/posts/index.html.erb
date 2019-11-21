@@ -10,35 +10,49 @@
           </div>
           <div class="card-index-cta">
             <div class="card-username"> <p>@<%= post.user.email.split("@").first %></p></div>
-            <div class="card-cta-wrap">
-              <div class="card-readmore small-button "> <p> Read more </p></div>
-              <div class="card-category small-button-fill"> <p> <%= post.user.email.split("@").first %> </p></div>
-            </div>
+            <div class="card-readmore small-button "> <p> Read more </p></div>
+            <div class="card-category small-button-fill"> <p> <%= post.post_categories.first.category.name %> </p></div>
           </div>
         </div>
-        <div class="card-index-images">
-          <div class="card-option">
-            <div class="card-option-image">
-            </div>
-            <div class="card-option-button">
-            </div>
-            <div class="card-option-image">
-              <% if post.kind == "photo" %>
-                <% post.post_options.each do |option| %>
-                  <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
-                    <%= cl_image_tag option.image.url(:showsmall) %>
-                  <% end %>
-                <% end %>
-              <% else %>
-                <% post.post_options.each do |option| %>
-                  <%= link_to option.content, post_post_option_post_votes_path(post, option), method: :post %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="card-option-button">
-            </div>
+        <% if post.kind == "photo" %>
+          <div class="card-index-images">
+          <% post.post_options.each_with_index do |option, index| %>
+            <% if index == 0 %>
+                <div class="col-6" style="padding-right: 10px;">
+                  <div class="card-option">
+                    <div class="card-option-image">
+                      <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
+                      <div class="option-image" style="background-image: url('<%= cl_image_path option.image.url %>');"> </div>
+                      <% end %>
+
+                    </div>
+                    <div class="card-option-button">
+                        <% post.post_options.each do |option| %>
+                          <%= link_to option.content, post_post_option_post_votes_path(post, option), method: :post %>
+                        <% end %>
+                    </div>
+                  </div>
+              </div>
+            <% else %>
+                <div class="col-6" style="padding-left: 10px;">
+                  <div class="card-option">
+                    <div class="card-option-image">
+                      <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
+                      <div class="option-image" style="background-image: url('<%= cl_image_path option.image.url %>');"> </div>
+                      <% end %>
+
+                    </div>
+                    <div class="card-option-button">
+                        <% post.post_options.each do |option| %>
+                          <%= link_to option.content, post_post_option_post_votes_path(post, option), method: :post %>
+                        <% end %>
+                    </div>
+                  </div>
+              </div>
+            <% end %>
+          <% end %>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
