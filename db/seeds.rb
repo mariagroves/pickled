@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+PostCategory.destroy_all
+Category.destroy_all
 Post.destroy_all
 User.destroy_all
 
@@ -53,8 +55,11 @@ post2.save!
 
 puts "Finished creating posts"
 
+puts "Creating categories"
+
 category1 = Category.new(
-  name: "Lifestyle"
+  name: "Lifestyle",
+  color: "#EE5746"
 )
 
 
@@ -66,7 +71,8 @@ post_category1.category = category1
 post_category1.save!
 
 category2 = Category.new(
-  name: "Food"
+  name: "Food",
+  color: "#FBE462"
 )
 category2.save!
 post_category2 = PostCategory.new
@@ -74,5 +80,6 @@ post_category2.post = post2
 post_category2.category = category2
 post_category2.save!
 
+puts "Finished creating categories"
 
 

@@ -7,19 +7,26 @@
           PICKLED
         </div>
       <% end %>
-
-
           <% if params["controller"] == "posts" && params["action"] == "index" %>
             <div class="navbar-buttons">
               <div class="dropdown show">
-                <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <% if params.has_key?(:category) %>
+                  <% selected_category = Category.find(params[:category]) %>
+                  <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", style="background-color: <%= selected_category.color %>">
+                    <%= selected_category.name %>
+                  </button>
+                <% else %>
+                  <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   All Categories
-                </button>
+                  </button>
+                <% end %>
                 <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item big-button-dropdown" style="background-color:#EE5746;" href="#">Lifestyle</a>
-                  <a class="dropdown-item big-button-dropdown" style="background-color:#FBE462" href="#">Food</a>
-                  <a class="dropdown-item big-button-dropdown" style="background-color:#5EBB8E;" href="#">Gaming</a>
-                  <a class="dropdown-item big-button-dropdown" style="background-color:#B684FD;" href="#">Furniture</a>
+                  <% @categories.each do |category| %>
+                    <% unless selected_category == category %>
+                      <%= link_to category.name, posts_path(category: category.id), class: 'dropdown-item big-button-dropdown', style: "background-color: #{category.color}" %>
+                    <% end %>
+                  <% end %>
+                  <%= link_to 'All', posts_path, class: 'dropdown-item big-button-dropdown', style: 'background-color: #968b8b' %>
                 </div>
               </div>
 
