@@ -20,7 +20,7 @@ class Post < ApplicationRecord
   has_many :comments
   accepts_nested_attributes_for :post_options
   validates :title, presence: true
-  validates :description, presence: true
+  validates :description, length: { maximum: 66 }
   validates :kind, presence: true
   # validate :has_category
 
