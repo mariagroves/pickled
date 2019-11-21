@@ -7,13 +7,13 @@
             <% if @post.kind == 'photo' %>
               <div class="cards">
                 <% @post.post_options.each do |option| %>
-                  <%= render 'image_card', post: @post, option: option %>
+                  <%= render 'shared/image_card', post: @post, option: option %>
                 <% end %>
               </div>
             <% else %>
               <div class="cards">
                 <% @post.post_options.each do |option| %>
-                  <%= render 'content_card', post: @post, option: option %>
+                  <%= render 'shared/content_card', post: @post, option: option %>
                 <% end %>
               </div>
             <% end %>
