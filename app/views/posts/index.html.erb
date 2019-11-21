@@ -30,7 +30,6 @@
                       <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
                       <div class="option-image" style="background-image: url('<%= cl_image_path option.image.url %>');"> </div>
                       <% end %>
-
                     </div>
                     <div class="card-option-button">
                         <% post.post_options.each do |option| %>
@@ -46,7 +45,6 @@
                       <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
                       <div class="option-image" style="background-image: url('<%= cl_image_path option.image.url %>');"> </div>
                       <% end %>
-
                     </div>
                     <div class="card-option-button">
                         <% post.post_options.each do |option| %>
