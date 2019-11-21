@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.post_options.build
+    @post.post_options.build
   end
 
   def create

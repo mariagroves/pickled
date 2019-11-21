@@ -22,8 +22,13 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :kind, presence: true
+  validate :has_category
 
   def vote_count
     post_votes.count
+  end
+
+  def has_category
+    self.errors.add(:post, "needs at least one category") if post_categories.empty?
   end
 end
