@@ -66,7 +66,7 @@ post_category1.category = category1
 post_category1.save!
 
 category2 = Category.new(
-  name: "Food"
+  name: "Travel"
 )
 category2.save!
 post_category2 = PostCategory.new
