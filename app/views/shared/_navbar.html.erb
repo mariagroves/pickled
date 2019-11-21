@@ -42,12 +42,9 @@
                   </svg>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                  <!-- <a class="dropdown-item big-button-dropdown" style="background-color:white; color:black;" href="/posts">Recent</a> -->
                   <%= link_to 'Recent', posts_path, class: 'dropdown-item big-button-dropdown bg-white', style: "color:black;" %>
-                  <!-- <a class="dropdown-item big-button-dropdown" style="background-color:white; color:black;" href="/posts?toto=abc">Best</a> -->
                   <!-- TODO make color: black a utility class and remove unnecessary inline styling -->
                   <%= link_to 'Best', posts_path(by_votes: true), class: 'dropdown-item big-button-dropdown bg-white', style: "color:black;" %>
-                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item big-button-dropdown" %>
                 </div>
               </div>
             </div>
@@ -59,7 +56,13 @@
                     Edit pickle
                   </div>
                 </div>
+              <!-- </div> -->
               <% end %>
+
+            <% when action_name == "edit" %>
+              <div class="navbar-buttons">
+                  <%= link_to "Back", post_path(@post), class: "big-button-navbar-black" %>
+              </div>
 
             <% when action_name == "edit" %>
               <%= link_to post_path(@post) do %>
@@ -70,8 +73,21 @@
                 </div>
               <% end %>
             <% end %>
-
           <% end %>
+
+          <% if controller_name == "pages" && action_name == "dashboard" %>
+            <div class="navbar-buttons">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "big-button-navbar-black" %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "big-button-navbar-white" %>
+            </div>
+          <% end %>
+
+          <% if controller_name == "devise/registrations" && action_name == "edit" %>
+            <div class="navbar-buttons">
+              <%= link_to "Back", dashboard_path, class: "big-button-navbar-black" %>
+            </div>
+          <% end %>
+
     </div>
     <div class="navbar-line"></div>
   </div>
