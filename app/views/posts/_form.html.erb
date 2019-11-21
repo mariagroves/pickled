@@ -24,12 +24,8 @@
           <%= p.input :image, label: 'Second option' %>
           <%= p.input :image_cache, as: :hidden %>
         <% end %>
-        <%#= f.simple_fields_for :categories do |p| %>
           <h6>Choose category</h6>
           <%= f.association :categories, as: :check_boxes %>
-          <%#= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-          <!-- f.collection_check_boxes :role_ids, Role.all, :id, :name # using :roles here is not going to work. -->
-        <%# end %>
         <%= f.submit "Share" %>
       <% end %>
     </div>
