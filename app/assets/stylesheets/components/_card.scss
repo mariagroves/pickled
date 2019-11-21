@@ -19,5 +19,15 @@
 .card-index-cta{
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+}
+
+.card-username {
+  flex-grow:1;
+}
+
+.card-cta-wrap {
+  width: 65%;
+  display: flex;
+  justify-content:space-between;
+
 }

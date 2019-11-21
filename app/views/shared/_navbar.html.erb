@@ -7,8 +7,6 @@
           PICKLED
         </div>
       <% end %>
-
-
           <% if params["controller"] == "posts" && params["action"] == "index" %>
             <div class="navbar-buttons">
               <div class="dropdown show">
@@ -35,7 +33,6 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item big-button-dropdown" style="background-color:white; color:black" href="#">Recent</a>
                   <a class="dropdown-item big-button-dropdown" style="background-color:white; color:black" href="#">Best</a>
-                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item big-button-dropdown" %>
                 </div>
               </div>
             </div>
@@ -46,16 +43,23 @@
                 <div class="big-button-fill" style="background-color: black; color:white">
                   Edit pickle
                 </div>
+              </div>
             <% end %>
-            </div>
 
           <% elsif params["controller"] == "posts" && params["action"] == "edit" %>
-            <%= link_to post_path(@post) do %>
               <div class="navbar-buttons">
-                <div class="big-button-fill" style="background-color: black; color:white">
-                  Back
-                </div>
-            <% end %>
+                  <%= link_to "Back", post_path(@post), class: "big-button-navbar-black" %>
+              </div>
+
+          <% elsif params["controller"] == "pages" && params["action"] == "dashboard" %>
+              <div class="navbar-buttons">
+                <%= link_to "Edit Profile", edit_user_registration_path, class: "big-button-navbar-black" %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "big-button-navbar-white" %>
+            </div>
+
+          <% elsif params["controller"] == "devise/registrations" && params["action"] == "edit" %>
+              <div class="navbar-buttons">
+                <%= link_to "Back", dashboard_path, class: "big-button-navbar-black" %>
             </div>
 
           <% end %>

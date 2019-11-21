@@ -34,15 +34,35 @@
   border-radius: 50px;
 }
 
-.button-search {
-  width: 34px;
-  padding: 5px 10px;
-  margin-left: 10px;
+.big-button-navbar-black {
+  font-family: $my-font;
+  font-size: 14px;
+  line-height: 23px;
+  padding: 5px 14px;
+  height:36px;
+  display:flex;
+  align-items: center;
+  text-align: center;
+  background-color: $black;
+  color: white;
+  border-radius: 50px;
+}
+
+.big-button-navbar-white {
+  font-family: $my-font;
+  font-size: 14px;
+  line-height: 23px;
+  padding: 5px 14px;
+  height:36px;
+  display:flex;
+  align-items: center;
   text-align: center;
   background-color: white;
-  color: $black;
-  border-radius: $border-radius;
+  color: black;
+  border-radius: 50px;
+  margin-left:10px;
 }
+
 
 .button-filter {
   width: 34px;

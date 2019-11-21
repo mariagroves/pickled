@@ -10,8 +10,10 @@
           </div>
           <div class="card-index-cta">
             <div class="card-username"> <p>@<%= post.user.email.split("@").first %></p></div>
-            <div class="card-readmore small-button "> <p> Read more </p></div>
-            <div class="card-category small-button-fill"> <p> <%= post.title %> </p></div>
+            <div class="card-cta-wrap">
+              <div class="card-readmore small-button "> <p> Read more </p></div>
+              <div class="card-category small-button-fill"> <p> <%= post.user.email.split("@").first %> </p></div>
+            </div>
           </div>
         </div>
         <div class="card-index-images">
