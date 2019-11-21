@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col">
       <div class="card-index">
-        <div class="card-index-info card-post-extra">
+        <div class="card-index-info">
           <div class="card-title">
             <%= post.title %>
           </div>
@@ -13,6 +13,13 @@
             <div class="card-readmore small-button "> <p> Read more </p></div>
             <div class="card-category small-button-fill"> <p> <%= post.post_categories.first.category.name %> </p></div>
           </div>
+        </div>
+        <div class="card-index-category-bar">
+          <% post.categories.each do |category| %>
+            <div class="small-button-fill category-button" style="background-color: <%= category.color %>">
+              <%= category.name %>
+            </div>
+          <% end %>
         </div>
         <% if post.kind == "photo" %>
           <div class="card-index-images">
