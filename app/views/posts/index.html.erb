@@ -1,21 +1,51 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-sm-4">
-      <h1>Browse the Posts</h1>
+        <h1>Browse the Posts</h1>
         <% @categories.each do |category| %>
           <%= link_to category.name, posts_path(category: category.id), class: 'btn btn-primary' %>
         <% end %>
         <%= link_to 'all posts', posts_path, class: 'btn btn-primary' %>
-      <br>
-        <% @posts.each do |post| %>
-            <h3><%= link_to post.title, post_path(post)%></h3>
-            <p><%= post.description %></p>
-            <%= link_to "Delete", post_path(post),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-        <% end %>
-        <br>
-        <p><%= link_to "+ Add a new Post",  new_post_path, class: "btn btn-success"%></p>
+  <% @posts.each do |post| %>
+  <%= link_to post_path(post), class: "" do  %>
+  <div class="row">
+    <div class="col">
+      <div class="card-index">
+        <div class="card-index-info card-post-extra">
+          <div class="card-title">
+            <%= post.title %>
+          </div>
+          <div class="card-index-cta">
+            <div class="card-username"> <p>@<%= post.user.email.split("@").first %></p></div>
+            <div class="card-readmore small-button "> <p> Read more </p></div>
+            <div class="card-category small-button-fill"> <p> <%= post.title %> </p></div>
+          </div>
+        </div>
+        <div class="card-index-images">
+          <div class="card-option">
+            <div class="card-option-image">
+            </div>
+            <div class="card-option-button">
+            </div>
+            <div class="card-option-image">
+              <% if post.kind == "photo" %>
+                <% post.post_options.each do |option| %>
+                  <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
+                    <%= cl_image_tag option.image.url(:showsmall) %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <% post.post_options.each do |option| %>
+                  <%= link_to option.content, post_post_option_post_votes_path(post, option), method: :post %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="card-option-button">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="navbar-line"></div>
+  <% end %>
+  <% end %>
 </div>
