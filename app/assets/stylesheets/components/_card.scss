@@ -1,0 +1,23 @@
+.card-index{
+  padding: 0;
+}
+
+.card-index-info{
+  background-color: white;
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+}
+
+.card-title{
+  font-size: 32px;
+  line-height: 100%;
+}
+
+.card-index-cta{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
