@@ -6,6 +6,10 @@ class PostsController < ApplicationController
              else
                Post.all.order(created_at: :desc)
              end
+
+    @categories = Category.all
+    @posts = @posts.joins(:post_categories).where(post_categories: { category_id: params[:category]}) if params[:category]
+
   end
 
   def show
