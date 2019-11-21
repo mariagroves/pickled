@@ -8,5 +8,43 @@
   </div>
 </div>
 
+<div class="container">
+  <% @posts.each do |post| %>
+    <% if post.user_id == current_user.id %>
+      <%= link_to post_path(post) do %>
+        <div class="row">
+          <div class="col">
+            <div class="card-index">
+              <div class="card-index-info">
+                <div>
+                  <div class="card-title">
+                  <%= post.title %>
+                  </div>
+                  <div class="card-dash-cta">
+                    <div class="small-button-fill-notification">
+                      new comments
+                    </div>
+                    <div class="category-buttons">
+                      <% post.categories.each do |category| %>
+                        <div class="small-button-fill category" style="background-color: <%= category.color %> ">
+                          <%= category.name %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="navbar-line">
+            </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+
+
 
 

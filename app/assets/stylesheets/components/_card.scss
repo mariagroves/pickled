@@ -27,6 +27,15 @@
 .card-index-cta{
   display: flex;
   align-items: flex-end;
+  justify-content:space-between;
+}
+
+.card-dash-cta{
+  display: flex;
+  align-items: flex-end;
+  justify-content:space-between;
+  padding-top: 3px;
+  padding-bottom: 4px;
 }
 
 .card-username {
