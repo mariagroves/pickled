@@ -7,7 +7,9 @@
           PICKLED
         </div>
       <% end %>
-          <% if params["controller"] == "posts" && params["action"] == "index" %>
+          <% if controller_name == "posts" %>
+            <% case %>
+            <% when action_name == "index" %>
             <div class="navbar-buttons">
               <div class="dropdown show">
                 <% if params.has_key?(:category) %>
@@ -40,30 +42,34 @@
                   </svg>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item big-button-dropdown" style="background-color:white; color:black" href="#">Recent</a>
-                  <a class="dropdown-item big-button-dropdown" style="background-color:white; color:black" href="#">Best</a>
+                  <!-- <a class="dropdown-item big-button-dropdown" style="background-color:white; color:black;" href="/posts">Recent</a> -->
+                  <%= link_to 'Recent', posts_path, class: 'dropdown-item big-button-dropdown bg-white', style: "color:black;" %>
+                  <!-- <a class="dropdown-item big-button-dropdown" style="background-color:white; color:black;" href="/posts?toto=abc">Best</a> -->
+                  <!-- TODO make color: black a utility class and remove unnecessary inline styling -->
+                  <%= link_to 'Best', posts_path(by_votes: true), class: 'dropdown-item big-button-dropdown bg-white', style: "color:black;" %>
                   <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item big-button-dropdown" %>
                 </div>
               </div>
             </div>
 
-          <% elsif params["controller"] == "posts" && params["action"] == "show" %>
-            <%= link_to edit_post_path(@post) do %>
-              <div class="navbar-buttons">
-                <div class="big-button-fill" style="background-color: black; color:white">
-                  Edit pickle
+            <% when action_name == "show" %>
+              <%= link_to edit_post_path(@post) do %>
+                <div class="navbar-buttons">
+                  <div class="big-button-fill" style="background-color: black; color:white">
+                    Edit pickle
+                  </div>
                 </div>
-            <% end %>
-            </div>
+              <% end %>
 
-          <% elsif params["controller"] == "posts" && params["action"] == "edit" %>
-            <%= link_to post_path(@post) do %>
-              <div class="navbar-buttons">
-                <div class="big-button-fill" style="background-color: black; color:white">
-                  Back
+            <% when action_name == "edit" %>
+              <%= link_to post_path(@post) do %>
+                <div class="navbar-buttons">
+                  <div class="big-button-fill" style="background-color: black; color:white">
+                    Back
+                  </div>
                 </div>
+              <% end %>
             <% end %>
-            </div>
 
           <% end %>
     </div>

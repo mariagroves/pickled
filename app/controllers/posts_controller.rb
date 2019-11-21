@@ -1,9 +1,15 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
+    @posts = if params[:by_votes]
+               Post.all.sort_by(&:vote_count).reverse
+             else
+               Post.all.order(created_at: :desc)
+             end
+
     @categories = Category.all
-    @posts = Post.all
     @posts = @posts.joins(:post_categories).where(post_categories: { category_id: params[:category]}) if params[:category]
+
   end
 
   def show
