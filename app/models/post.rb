@@ -22,7 +22,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :kind, presence: true
-  validate :has_category
+  # validate :has_category
 
   def vote_count
     post_votes.count

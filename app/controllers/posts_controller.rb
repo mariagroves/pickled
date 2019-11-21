@@ -27,10 +27,10 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      category_ids = params[:post][:category_ids]
-      category_ids.each do |category_id|
-        PostCategory.create(post: @post, category_id: category_id)
-      end
+      # category_ids = params[:post][:category_ids]
+      # category_ids.each do |category_id|
+      #   PostCategory.create(post: @post, category_id: category_id)
+      # end
       redirect_to post_path(@post)
     else
       render :new
@@ -41,10 +41,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    category_ids = Category.where id: post_params[:category_ids]
-    category_ids.each do |category_id|
-      PostCategory.create(post: @post, category_id: category_id)
-    end
+    # category_ids = Category.where id: post_params[:category_ids]
+    # category_ids.each do |category_id|
+    #   PostCategory.create(post: @post, category_id: category_id)
+    # end
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
