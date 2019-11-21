@@ -7,7 +7,13 @@ class PostVotesController < ApplicationController
     if @post_vote.save
       redirect_to post_path(@post)
     else
-      render :new
+      errors_messages = @post_vote.errors.messages
+      if errors_messages[:post_option].present?
+        flash[:alert] = errors_messages[:post_option].first
+      else
+        flash[:alert] = "Something went wrong."
+      end
+      render 'posts/show'
     end
   end
 

@@ -9,7 +9,7 @@
       <div class="card__description h-100">
         <div class="py-4 h-100">
           <% if current_user.has_voted?(post) %>
-            <%= "#{option.post.post_votes.count} votes" %>
+            <%= "#{option.post_votes.count} votes" %>
               <svg width="24" height="24" viewBox="0 0 24 24">
               <path d="show"></path>
             </svg>
