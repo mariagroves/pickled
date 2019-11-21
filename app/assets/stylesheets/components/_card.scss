@@ -2,6 +2,12 @@
   padding: 0;
 }
 
+.card-index-images{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
 .card-index-info{
   background-color: white;
   width: 100%;
@@ -21,3 +27,22 @@
   align-items: flex-end;
   justify-content: space-between;
 }
+
+.option-image {
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  height: 262px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+}
+
+.or {
+  height: 262px;
+  font-size: 12px;
+  display:flex;
+  align-items:center;
+  text-align: center;
+}
+
