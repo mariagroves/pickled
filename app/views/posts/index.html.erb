@@ -1,4 +1,9 @@
 <div class="container">
+        <h1>Browse the Posts</h1>
+        <% @categories.each do |category| %>
+          <%= link_to category.name, posts_path(category: category.id), class: 'btn btn-primary' %>
+        <% end %>
+        <%= link_to 'all posts', posts_path, class: 'btn btn-primary' %>
   <% @posts.each do |post| %>
   <%= link_to post_path(post), class: "" do  %>
   <div class="row">
