@@ -1,7 +1,11 @@
 <div class="container">
-  <% @posts.each do |post| %>
+  <% @posts.each_with_index do |post, index| %>
   <%= link_to post_path(post), class: "" do  %>
-  <div class="row">
+  <% if index % 2 == 0 %>
+   <div class="row" style="background-color: #EBEBEB;">
+  <% else%>
+   <div class="row" style="background-color: #DCDCDC;">
+  <% end %>
     <div class="col">
       <div class="card-index">
         <div class="card-index-info">
@@ -14,10 +18,16 @@
           </div>
         </div>
         <div class="card-index-category-bar">
-          <% post.categories.each do |category| %>
+          <% post.categories.each do |category, index| %>
+            <% if index == 0 %>
+            <div class="small-button-fill" style="background-color: <%= category.color %>">
+              <%= category.name %>
+            </div>
+            <% else %>
             <div class="small-button-fill category-button" style="background-color: <%= category.color %>">
               <%= category.name %>
             </div>
+            <% end %>
           <% end %>
         </div>
         <% if post.kind == "photo" %>
@@ -28,7 +38,6 @@
       </div>
     </div>
   </div>
-  <div class="navbar-line"></div>
   <% end %>
   <% end %>
 </div>
