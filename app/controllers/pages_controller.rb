@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = User.all
+    @posts = Post.all
   end
 
   def home

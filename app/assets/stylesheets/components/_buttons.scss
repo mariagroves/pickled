@@ -1,4 +1,4 @@
- .small-button{
+.small-button {
   border:solid black;
   border-width: thin;
   border-radius: 50px;
@@ -8,7 +8,7 @@
   display:flex;
   align-items:center;
 }
- .small-button-fill{
+.small-button-fill {
   border-radius: 50px;
   padding: 4px 10px;
   color: white;
@@ -19,6 +19,16 @@
   align-items:center;
 }
 
+.small-button-fill-notification {
+  border-radius: 50px;
+  padding: 4px 10px;
+  color: white;
+  background-color: $red;
+  font-size: 14px;
+  height:26px;
+  display:flex;
+  align-items:center;
+}
 
 .big-button-fill {
   font-family: $my-font;
@@ -63,7 +73,6 @@
   margin-left:10px;
 }
 
-
 .button-filter {
   width: 34px;
   padding: 5px 10px;
@@ -74,8 +83,16 @@
   border-radius: $border-radius;
 }
 
-.category-button{
-  margin-left: 6px;
+
+.dash-category-buttons {
+  position:absolute;
+  bottom: 47px;
+  right: 10px;
+  display:flex;
+
+  .category {
+    margin-left: 5px;
+  }
 }
 
 .button-dash {
