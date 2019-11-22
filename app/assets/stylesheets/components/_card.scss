@@ -10,6 +10,12 @@
   margin-top: 10px;
 }
 
+.card-index-texts{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
 .card-index-info{
   background-color: white;
   width: 100%;
@@ -48,6 +54,19 @@
   border-radius: 16px;
   background-size: cover;
   background-position: center;
+}
+
+.option-text{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items: top;
+  text-align: left;
+  height: 262px;
+  border-radius: 16px;
+  font-size: 20px;
+  letter-spacing: -0.015em;
+  padding: 10px;
 }
 
 .or {
