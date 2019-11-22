@@ -4,6 +4,33 @@
   flex-direction: column;
 }
 
+.card-dash{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 16px;
+  margin-top: 10px;
+  position:relative;
+}
+
+.card-line {
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  width:100%;
+}
+
+.card-dash-info{
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px 10px 10px;
+}
+
 .card-index-images{
   display:flex;
   justify-content: space-between;
