@@ -1,0 +1,23 @@
+<div class="card-index-images">
+  <% post.post_options.each_with_index do |option, index| %>
+    <% if index == 0 %>
+      <div class="col-6" style="padding-right: 10px;">
+        <div class="card-option">
+          <div class="card-option-image">
+            <%= link_to option.content, post_post_option_post_votes_path(post, option), method: :post %>
+          </div>
+          <div class="card-option-button"></div>
+        </div>
+      </div>
+    <% else %>
+      <div class="col-6" style="padding-left: 10px;">
+        <div class="card-option">
+          <div class="card-option-image">
+            <%= link_to option.content, post_post_option_post_votes_path(post, option), method: :post %>
+          </div>
+          <div class="card-option-button"></div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
