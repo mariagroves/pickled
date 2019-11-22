@@ -77,3 +77,46 @@
 .category-button{
   margin-left: 6px;
 }
+
+
+.button-dash {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width:52px;
+  height:52px;
+  border-radius: 16px;
+  background-position: center;
+  background-size: cover;
+  z-index: 1000;
+}
+  .button-dash-notification{
+    width:16px;
+    height:16px;
+    background-color: red;
+    font-size:9px;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    bottom: 52px;
+    right:6px;
+    z-index: 1001;
+    border-radius:16px;
+    padding-right: 1px;
+  }
+
+.button-add {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  width:52px;
+  height:52px;
+  border-radius: 16px;
+  background-color:black;
+  z-index: 1000;
+}
