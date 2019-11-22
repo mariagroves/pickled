@@ -5,24 +5,31 @@
         <div class="col-6" style="padding-right: 10px;">
           <div class="card-option">
             <div class="card-option-image">
-              <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
+              <%= link_to post_path(post) do %>
                 <div class="option-image" style="background-image: url('<%= cl_image_path option.image.url %>');"> </div>
               <% end %>
             </div>
-            <div class="card-option-button">
-            </div>
+            <% whatever = "test" %>
+            <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
+              <div class="card-option-button">
+                <i class="fas fa-heart vote-heart"></i>
+              </div>
+            <% end %>
           </div>
       </div>
     <% else %>
         <div class="col-6" style="padding-left: 10px;">
           <div class="card-option">
             <div class="card-option-image">
-              <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
+              <%= link_to post_path(post) do %>
               <div class="option-image" style="background-image: url('<%= cl_image_path option.image.url %>');"> </div>
               <% end %>
             </div>
-            <div class="card-option-button">
-            </div>
+              <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
+              <div class="card-option-button">
+                <i class="fas fa-heart vote-heart"></i>
+              </div>
+            <% end %>
           </div>
       </div>
     <% end %>

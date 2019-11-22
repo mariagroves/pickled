@@ -7,6 +7,7 @@
             <%= link_to option.content, post_post_option_post_votes_path(post, option), method: :post %>
           </div>
           <div class="card-option-button"></div>
+            <i class="fas fa-heart vote-heart"></i>
         </div>
       </div>
     <% else %>
@@ -16,8 +17,9 @@
             <%= link_to option.content, post_post_option_post_votes_path(post, option), method: :post %>
           </div>
           <div class="card-option-button"></div>
+           <i class="fas fa-heart vote-heart"></i>
+          </div>
         </div>
-      </div>
     <% end %>
   <% end %>
 </div>
