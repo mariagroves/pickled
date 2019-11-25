@@ -1,17 +1,18 @@
-.card-index{
+
+// GLOBAL
+
+.card {
   padding: 0;
   display: flex;
   flex-direction: column;
+  margin-bottom:40px;
+  background-color: rgba(255,255,255,0.75);
+  border: none;
 }
 
-.card-dash{
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 16px;
-  margin-top: 10px;
-  position:relative;
+.card-title {
+  font-size: 32px;
+  line-height: 100%;
 }
 
 .card-line {
@@ -19,103 +20,80 @@
   width:100%;
 }
 
-.card-dash-info{
-  width: 100%;
-  text-align: left;
-  padding: 10px;
-}
-
-.card-stats {
+.card-cta-wrap {
+  width: 65%;
   display: flex;
-  justify-content: space-between;
-  padding: 8px 10px 10px 10px;
+  justify-content:space-between;
 }
+// INDEX
 
-.card-index-images{
+.card-index-info {
   display:flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 40px;
-}
-
-.card-index-texts{
-  display:flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 40px;
-}
-
-.card-index-info{
-  background-color: white;
+  align-items:center;
   width: 100%;
   text-align: left;
-  border-radius: 10px;
-  margin: 10px 0px 10px 0px;
-  padding: 10px;
+  padding: 5px 5px 5px 10px;
+  height: 36px;
 }
 
-.card-title{
+.card-index-images {
+  display:flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.card-index-texts {
+  display:flex;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.card-index-title {
   font-size: 32px;
   line-height: 100%;
+  padding: 15px 10px 0 10px;
+  letter-spacing: -0.01em;
+  line-height: 107.9%;
 }
 
-.card-index-cta{
+.card-index-cta {
   display: flex;
   align-items: flex-end;
   justify-content:space-between;
-}
-
-.card-dash-cta{
-  display: flex;
-  align-items: flex-end;
-  justify-content:space-between;
-  padding-top: 3px;
-  padding-bottom: 4px;
 }
 
 .card-username {
   flex-grow:1;
 }
 
-.card-cta-wrap {
-  width: 65%;
-  display: flex;
-  justify-content:space-between;
-
-}
-
 .option-image {
-  width:100%;
+  width: 100%;
   display:flex;
   justify-content:space-between;
-  height: 262px;
+  height: 300px;
   border-radius: 16px;
   background-size: cover;
   background-position: center;
 }
 
-.option-text{
-  width:100%;
+.option-text {
+  width: 100%;
+  height:auto;
   display:flex;
   justify-content:space-between;
   align-items: top;
   text-align: left;
-  height: 262px;
   border-radius: 16px;
   font-size: 20px;
   letter-spacing: -0.015em;
   padding: 10px;
+  padding-bottom: 40px;
+  padding-top: 8px;
+  border: #acacac solid 0.5px;
 }
 
-.or {
-  height: 262px;
-  font-size: 12px;
-  display:flex;
-  align-items:center;
-  text-align: center;
-}
-
-.card-index-category-bar{
+.card-index-category-bar {
   background-color: none;
   padding: 10px 6px 10px 0px;
   height: 36px;
@@ -130,6 +108,42 @@
   position: relative;
 }
 
-.card-option-button {
-  margin: 0 auto;
+// DASHBOARD
+
+.card-dash {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 16px;
+  margin-top: 10px;
+  position:relative;
 }
+
+.card-dash-info {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px 10px 10px;
+}
+
+.card-dash-cta {
+  display: flex;
+  align-items: flex-end;
+  justify-content:space-between;
+  padding-top: 3px;
+  padding-bottom: 4px;
+}
+
+.card-dash-index {
+  display: flex;
+  align-items: flex-end;
+  justify-content:space-between;
+}
+
+
