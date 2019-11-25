@@ -1,12 +1,30 @@
-const voteOption = document.getElementById('vote-<%= @post_vote.post_option.id %>');
-voteOption.insertAdjacentHTML('afterbegin', '<%= @post_vote.post_option.post_votes.count %>');
+<%#= @post_vote.post_option.post_votes.count %>
+document.querySelectorAll('.option-<%= @post.id %>').forEach((heart) => {
+  heart.classList.remove('card-option-button');
+  if (heart.dataset.optionId === "<%= @post_vote.post_option.id %>"){
+      heart.classList.add(`card-${(<%=@vote_count%> > <%=@other_vote_count%>) ? 'win' : 'lose'}-result-button`);
+      heart.innerHTML = "<%= @vote_count %> <%="vote".pluralize(@vote_count)%>";
+   } else {
+    heart.classList.add(`card-${(<%=@vote_count%> > <%=@other_vote_count%>) ? 'lose' : 'win'}-result-button`);
+    heart.innerHTML = "<%= @other_vote_count %> <%="vote".pluralize(@other_vote_count)%>";
+  }
+});
 
-const indexBody = document.getElementById('index-container');
-const div = document.createElement("div");
 
+  <% if @post_vote.errors.any? %>
+    myAlert = document.createElement('div');
+    myAlert.innerHTML = 'You have already voted!' + '<button type=“button” class=“close” data-dismiss=“alert” aria-label=“Close”>' +
+    '<span aria-hidden=“true”>&times;</span></button>';
+    myAlert.classList.add('alert');
+    myAlert.classList.add('alert-danger');
+    myAlert.classList.add('fade');
+    myAlert.classList.add('show');
+    myAlert.setAttribute('id', 'alert');
 
-<% if @post_vote.errors.any? %>
-  indexBody.insertAdjacentHTML('beforeend', )
-<% else %>
+    myAlert.addEventListener('click', (event) => {
+      event.target.parentNode.removeChild(event.target);
+    })
+    document.getElementById('js-errors').innerHTML = "";
+    document.getElementById('js-errors').appendChild(myAlert);
 
-<% end %>
+  <% end %>

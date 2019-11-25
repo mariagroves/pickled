@@ -8,8 +8,8 @@
               <div class="option-text" style="background-color: white"><%= option.content %></div>
             <% end %>
           </div>
-            <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
-              <div class="card-option-button">
+            <%= link_to post_post_option_post_votes_path(post, option), remote: true, method: :post do %>
+              <div class="card-option-button option-<%= post.id %>" data-option-id="<%= option.id %>" >
                 <i class="fas fa-heart vote-heart"></i>
               </div>
             <% end %>
@@ -23,8 +23,8 @@
               <div class="option-text" style="background-color: white"><%= option.content %></div>
             <% end %>
           </div>
-            <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
-              <div class="card-option-button">
+            <%= link_to post_post_option_post_votes_path(post, option), remote: true, method: :post do %>
+              <div class="card-option-button option-<%= post.id %>" data-option-id="<%= option.id %>">
                 <i class="fas fa-heart vote-heart"></i>
               </div>
             <% end %>

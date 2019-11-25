@@ -4,8 +4,12 @@ class PostVotesController < ApplicationController
     @post_vote = PostVote.new(post_vote_params)
     @post = Post.find(params[:post_id])
     @post_vote.user = current_user
+
     # if
-      @post_vote.save
+    @post_vote.save
+
+    @vote_count = @post_vote.post_option.post_votes.count
+    @other_vote_count = @post.post_options.where.not(id: @post_vote.post_option).first.post_votes.count
       # redirect_to post_path(@post)
     # else
       # errors_messages = @post_vote.errors.messages
