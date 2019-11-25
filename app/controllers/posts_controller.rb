@@ -1,14 +1,18 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
+    @posts = Post.all
+    @posts = @posts.joins(:post_categories).where(post_categories: { category_id: params[:category]}) if params[:category]
+    # filtering by votes and category simultaneously
     @posts = if params[:by_votes]
-               Post.all.sort_by(&:vote_count).reverse
+               @posts.sort_by(&:vote_count).reverse
              else
-               Post.all.order(created_at: :desc)
+               @posts.order(created_at: :desc)
              end
+    # SELECT * FROM orders GROUP BY date(created_at) HAVING created_at > '2009-01-15'
+    # Order.all(:group => "date(created_at)", :having => ["created_at > ?", 1.month.ago])
 
     @categories = Category.all
-    @posts = @posts.joins(:post_categories).where(post_categories: { category_id: params[:category]}) if params[:category]
   end
 
   def show
@@ -31,6 +35,7 @@ class PostsController < ApplicationController
       # category_ids.each do |category_id|
       #   PostCategory.create(post: @post, category_id: category_id)
       # end
+      sweetalert_success('Your resource is created and available.', 'Successfully created', persistent: 'Awesome!')
       redirect_to post_path(@post)
     else
       render :new
