@@ -2,7 +2,7 @@
   <% post.post_options.each_with_index do |option, index| %>
     <% if index == 0 %>
       <div class="col-6" style="padding-right: 10px;">
-        <div class="card-option">
+        <div class="card-option" id="vote-<%= option.id %>">
           <div class="card-option-text">
             <%= link_to post_path(post) do %>
               <div class="option-text" style="background-color: white"><%= option.content %></div>
@@ -17,7 +17,7 @@
       </div>
     <% else %>
       <div class="col-6" style="padding-left: 10px;">
-        <div class="card-option">
+        <div class="card-option" id="vote-<%= option.id %>">
           <div class="card-option-text">
             <%= link_to post_path(post) do %>
               <div class="option-text" style="background-color: white"><%= option.content %></div>
