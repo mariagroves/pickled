@@ -152,8 +152,43 @@
   align-items: center;
   justify-content: center;
 }
-// Harry potter rules
+
 .vote-heart {
   font-size: 30px;
   color: white;
 }
+
+.card-win-result-button {
+  position: absolute;
+  width: 118px;
+  height: 52px;
+  left: 35px;
+  top: 446px;
+  background: #5EBB8E;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 35px;
+  top: 234px;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
+.card-lose-result-button {
+  position: absolute;
+  width: 118px;
+  height: 52px;
+  left: 223px;
+  top: 446px;
+  background: #EE5746;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 35px;
+  top: 234px;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+
