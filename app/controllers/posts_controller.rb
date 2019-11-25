@@ -31,6 +31,7 @@ class PostsController < ApplicationController
       # category_ids.each do |category_id|
       #   PostCategory.create(post: @post, category_id: category_id)
       # end
+      sweetalert_success('Your resource is created and available.', 'Successfully created', persistent: 'Awesome!')
       redirect_to post_path(@post)
     else
       render :new
