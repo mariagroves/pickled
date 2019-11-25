@@ -35,12 +35,14 @@
   display:flex;
   justify-content: space-between;
   margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .card-index-texts{
   display:flex;
   justify-content: space-between;
   margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .card-index-info{
@@ -126,4 +128,8 @@
 
 .card-option {
   position: relative;
+}
+
+.card-option-button {
+  margin: 0 auto;
 }

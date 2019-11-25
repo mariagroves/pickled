@@ -11,6 +11,12 @@
   flex-direction: column;
 }
 
+.navbar-line {
+  padding-top: 10px;
+  border-bottom:1px solid rgba(0,0,0,0.2);
+  width:100%;
+}
+
 .navbar-container {
   display:flex;
   width:100%;
@@ -40,11 +46,6 @@
   padding-right: 10px;
 }
 
-.navbar-line {
-  padding-top: 31px;
-  border-bottom:1px solid rgba(0,0,0,0.2);
-  width:100%;
-}
 
 
 .dropdown-toggle {

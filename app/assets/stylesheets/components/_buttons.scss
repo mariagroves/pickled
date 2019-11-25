@@ -23,11 +23,11 @@
   border-radius: 50px;
   padding: 4px 10px;
   color: white;
-  background-color: $red;
+  background-color: red;
   font-size: 14px;
-  height:26px;
-  display:flex;
-  align-items:center;
+  height: 26px;
+  display: flex;
+  align-items: center;
 }
 
 .big-button-fill {
@@ -83,6 +83,9 @@
   border-radius: $border-radius;
 }
 
+.category-button {
+  margin-left:10px;
+}
 
 .dash-category-buttons {
   position:absolute;
@@ -135,11 +138,12 @@
   border-radius: 16px;
   background-color:black;
   z-index: 1000;
+}
 
 .card-option-button {
   position: absolute;
   bottom: -22px;
-  left: 70px;
+  left: 57px;
   width: 52px;
   height: 52px;
   background: #EE5746;
@@ -148,9 +152,8 @@
   align-items: center;
   justify-content: center;
 }
-
+// Harry potter rules
 .vote-heart {
   font-size: 30px;
   color: white;
-
 }
