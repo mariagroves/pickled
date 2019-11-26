@@ -2,20 +2,23 @@
   <% post.post_options.each_with_index do |option, index| %>
       <div class="col-6" style="padding-right: 5px;padding-left: 5px;">
         <div class="card-option">
+
           <div class="card-option-text">
             <%= link_to post_path(post) do %>
               <div class="option-text"><%= option.content %></div>
             <% end %>
           </div>
-            <%= link_to post_post_option_post_votes_path(post, option), method: :post do %>
-              <div class="card-option-button">
-                <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <%= link_to post_post_option_post_votes_path(post, option), remote: true, method: :post do %>
+            <div class="card-option-button option-<%= post.id %>" data-option-id="<%= option.id %>" >
+              <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.900785 3.62676C0.300262 4.74476 1.64539e-06 5.99276 1.58515e-06 7.37076C1.51355e-06 9.00876 0.43081 10.5038 1.29243 11.8558C2.15405 13.2078 3.40731 14.2348 5.05222 14.9368L6.97128 15.7558C8.98172 16.6138 10.5875 17.5368 11.7885 18.5248C12.9896 19.5128 15 20.6218 15 21.9998C15 20.6218 17.0104 19.5128 18.2115 18.5248C19.4386 17.5368 21.0444 16.6138 23.0287 15.7558L24.9478 14.9368C26.5927 14.2348 27.846 13.2078 28.7076 11.8558C29.5692 10.5038 30 9.00876 30 7.37076C30 5.99276 29.6997 4.74476 29.0992 3.62676C28.4987 2.50876 27.6371 1.62476 26.5144 0.974755C25.4178 0.324755 24.0992 -0.000244399 22.5587 -0.000244466C20.7311 -0.000244546 19.1514 0.480755 17.8198 1.44276C16.4883 2.40476 15.5483 3.67875 15 5.26476C14.4517 3.67875 13.5118 2.40476 12.1802 1.44276C10.8486 0.480755 9.26893 -0.000245047 7.44125 -0.000245127C5.92689 -0.000245193 4.60836 0.324754 3.48564 0.974754C2.36293 1.62475 1.50131 2.50876 0.900785 3.62676Z" fill="white"/>
-                </svg>
-              </div>
-            <% end %>
+              </svg>
+
+            </div>
+          <% end %>
         </div>
       </div>
+
   <% end %>
 
 </div>
