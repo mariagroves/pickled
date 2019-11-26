@@ -1,4 +1,4 @@
-const selector = document.querySelector("#dropdown")
+const selector = document.querySelector("#dropdown");
 
 const showAppropriateFields = () => {
     const textFields = selector.value === "text"
