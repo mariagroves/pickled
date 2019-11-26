@@ -271,6 +271,83 @@ POSTS = [
     ]
   },
 
+   { #post18
+    title: "With or without coffee?",
+    description: "Not sure what to post to IG",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/74861206_160042712056821_6319163215074979259_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=109&oh=b93f51e8d0ad8fb5cc1aee0ac9866fea&oe=5E6F4624" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/72927009_2441741052766407_873655718120659677_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&oh=1cec977403a4c53119a6411f9b082a7e&oe=5E7AAD0B" }
+    ]
+  },
+
+  { #post19
+    title: "Help me choose best look green or black?",
+    description: "Thanks Giving dinner party",
+    kind: "photo",
+    category: fashion,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/71233631_186916962349804_4443306640570535778_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=efee63444c06b3a3ae8097ffa7b96c6e&oe=5E72C931" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/74987354_1190579494470360_463857070878392874_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=100&oh=ca6408abb357a9b9636dfe203a7178fa&oe=5E76B69F" }
+    ]
+  },
+
+  { #post20
+    title: "Rings rings, which nail color is best?",
+    description: "They're both such pretty colors, its hard to choose",
+    kind: "photo",
+    category: fashion,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/66655803_853575415024473_7573328545710723770_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=109&oh=6cfd44ae4578ebdb76d0930b66ab8d66&oe=5E66A71B" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/56835799_161798764829294_4931048040003400896_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=102&oh=da63498e66cdd2bde69e36819677fb03&oe=5E7A4191" }
+    ]
+  },
+
+  { #post21
+    title: "Can you help me choose a first date dress?",
+    description: "Love them both. We are having French food tonight",
+    kind: "photo",
+    category: fashion,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/74707634_1081157258751915_6851193946095555824_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&oh=18e28e64ad2147ea829ce3dbc20f9139&oe=5E7C885D" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/75534189_1183689285163193_6941892795419970401_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=105&oh=471e8bc6677057746c0815538fc5e929&oe=5E816184" }
+    ]
+  },
+
+  { #post22
+    title: "Help me choose my gf's bday present :)",
+    description: "She loves pottery, artsy stuff. Turning 25!",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/71297879_1322593127903382_9138592489086019894_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&oh=0a586cfe5426466919e1f71debc58fdf&oe=5E7C6CD7" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/70365618_732707763866624_2994201536234359861_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=108&oh=73ebfd7d42536b8f11c26f95f8cc62a8&oe=5E7F23CE" }
+    ]
+  },
+
+  { #post23
+    title: "Which one should I plant?",
+    description: "I love happy colors and beautiful flowers",
+    kind: "photo",
+    category: nature,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/61543241_392842994677827_2310320228043818766_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&oh=d63c6fbf2c7775fa98fe6859e4652ff3&oe=5E6E07EE" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/62015864_430135367565702_1798920746969107840_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&oh=0fc0eba1ea05d3b83502200fff6c9009&oe=5E85A463" }
+    ]
+  },
+
+  { #post24
+    title: "Picnic outfit, what should I wear?",
+    description: "I want to express my strong femininity",
+    kind: "photo",
+    category: fashion,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/38640851_1022643977904256_91580548270522368_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&se=7&oh=e5d7a59d055f1cfe83e5a5615fade32c&oe=5E736631" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/66134652_2158668277578460_2994634930833308216_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=8335d99e0385884693eec23938ab2efa&oe=5E7357CA" }
+    ]
+  }
+
 ]
 
 POSTS.each do |post_params|
