@@ -12,4 +12,13 @@ $headers-font: "Union", "Helvetica", "sans-serif";
        font-url('union.woff2') format('woff2'),
        font-url('union.ttf') format('truetype')
 }
-$my-font: "union";
+
+@font-face {
+  font-family: "NeuzeitSLTStd-Book";
+  src: url(asset-path('NeuzeitSLTStd-Book.woff') format("woff"));
+  src: font-url('NeuzeitSLTStd-Book.woff?#iefix') format('embedded-opentype'),
+       font-url('NeuzeitSLTStd-Book.woff') format('woff'),
+       font-url('NeuzeitSLTStd-Book.ttf') format('truetype')
+}
+
+$my-font: "Union";

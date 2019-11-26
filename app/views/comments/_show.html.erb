@@ -1,11 +1,12 @@
-<div id="comment-<%=comment.id %>">
+<div id="comment-<%=comment.id %>" class="comments-text" >
+  <p class="comments-username">@<%= comment.user.username %></p>
   <p> <%= comment.content %> </p>
    <% if comment.user == current_user %>
     <%= link_to post_comment_path(comment.post, comment),
         method: :delete,
         remote: true,
         data: { confirm: "Are you sure?" } do %>
-      <div class="btn btn-primary">Delete</div>
+      <p class="comments-delete">Delete</p>
     <% end %>
   <% end %>
 </div>
