@@ -14,11 +14,11 @@
               <div class="dropdown show">
                 <% if params.has_key?(:category) %>
                   <% selected_category = Category.find(params[:category]) %>
-                  <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", style="background-color: <%= selected_category.color %>">
+                  <button class="dropdown-toggle dropdown-categories" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false", style="background-color: <%= selected_category.color %>">
                     <%= selected_category.name %>
                   </button>
                 <% else %>
-                  <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="dropdown-toggle dropdown-categories" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   All Categories
                   </button>
                 <% end %>
