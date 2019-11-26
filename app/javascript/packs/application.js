@@ -20,20 +20,12 @@ initSweetalert('#sweet-alert-delete', {
   }
 });
 
-$(".dropdown-toggle.dropdown-categories").click(function() {
-  $(".container").toggleClass("blur")
-});
-
-$(".dropdown-toggle.dropdown-filter").click(function() {
-  $(".container").toggleClass("blur")
-});
-
-
-// import { blurBody } from '../components/blur';
-// blurBody();
+import { blurBody } from '../components/navbar';
+blurBody();
 
 AOS.init();
 
 require("components/form")
+
 
 
