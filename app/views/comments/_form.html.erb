@@ -1,4 +1,4 @@
 <%= simple_form_for([post, comment], remote: true) do |f| %>
-  <%= f.input :content, label: "Please leave a comment" %>
-  <%= f.submit "Submit" %>
+  <%= f.input :content %>
+  <%= f.submit "Submit", class: "big-button-fill", style: "border:none; margin-left:5px;" %>
 <% end %>

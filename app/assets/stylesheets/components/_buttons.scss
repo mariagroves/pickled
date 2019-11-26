@@ -98,6 +98,17 @@
   }
 }
 
+.index-category-buttons {
+  position:absolute;
+  top: 5px;
+  right: 5px;
+  display:flex;
+
+  .category {
+    margin-left: 5px;
+  }
+}
+
 .button-dash {
   position: fixed;
   bottom: 10px;
@@ -141,16 +152,19 @@
 }
 
 .card-option-button {
-  position: absolute;
-  bottom: -22px;
-  left: 57px;
+  position:absolute;
+  margin: 0 auto;
+  left: 0px;
+  right: 0px;
+  bottom: -26px;
   width: 52px;
   height: 52px;
-  background: #EE5746;
+  background: #EC6060;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1111;
 }
 
 .vote-heart {
@@ -160,37 +174,46 @@
 
 .card-win-result-button {
   position: absolute;
+  margin: 0 auto;
+  left: 0px;
+  right: 0px;
+  bottom: -26px;
+
   width: 118px;
   height: 52px;
-  left: 35px;
-  top: 446px;
   background: #5EBB8E;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 35px;
-  top: 234px;
   color: #FFFFFF;
   font-size: 20px;
 }
 
 .card-lose-result-button {
   position: absolute;
+  margin: 0 auto;
+  left: 0px;
+  right: 0px;
+  bottom: -26px;
+
   width: 118px;
   height: 52px;
-  left: 223px;
-  top: 446px;
   background: #EE5746;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 35px;
-  top: 234px;
   color: #FFFFFF;
   font-size: 20px;
 }
+
 .btn-danger{
   margin-left: 5px;
+}
+
+.button-grey {
+  background-color: #DCDCDC;
+  color: #646464 !important;
+
 }
