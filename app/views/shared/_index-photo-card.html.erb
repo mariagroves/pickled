@@ -4,9 +4,7 @@
           <div class="card-option">
 
             <div class="card-option-image">
-              <%= link_to post_path(post) do %>
                 <div class="option-image" style="background-image: url('<%= cl_image_path option.image.url %>');"> </div>
-              <% end %>
             </div>
 
             <%= link_to post_post_option_post_votes_path(post, option), remote: true, method: :post do %>
