@@ -19,7 +19,9 @@
                 </div>
               </div>
               <div class="card-line"></div>
+              <%= link_to post_path(post) do %>
               <div class="card-index-title"><%= post.title %></div>
+              <% end %>
 
               <% if post.kind == "photo" %>
                 <%= render 'shared/index-photo-card', post: post %>
