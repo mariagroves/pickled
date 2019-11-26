@@ -17,7 +17,9 @@
 
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
-  has_many :post_votes, dependent: :destroy
+  has_many :post_options, through: :posts
+  has_many :post_votes, through: :post_options
+  has_many :own_votes, foreign_key: 'user_id', class_name: "PostVote", dependent: :destroy
   has_many :comments
   validates :username, presence: true
   # validates :image, presence: true
@@ -28,12 +30,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def vote_count
-    post_votes.count
+    own_votes.count
   end
 
   def has_voted?(post)
     # returns true if the user has a post vote for a post option of this post
-    post_votes.where(post_option: post.post_options).any?
+    own_votes.where(post_option: post.post_options).any?
     # else returns false
   end
 end
