@@ -15,6 +15,7 @@ class PostOption < ApplicationRecord
   has_many :post_votes, dependent: :destroy
   mount_uploader :image, PhotoUploader
   validate :has_content
+  validates :content, length: { maximum: 280 }
 
   def has_content
     self.errors.add(:content, "needs to be either text or photos") if image.file.nil? && content.empty?

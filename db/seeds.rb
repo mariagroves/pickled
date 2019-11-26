@@ -12,333 +12,288 @@ PostOption.destroy_all
 Category.destroy_all
 Post.destroy_all
 User.destroy_all
+#size is used later many times
+SIZE = 30
 
 puts "Creating users..."
-
-user1 = User.new(
-  email: "user1@lewagon.com",
-  password: "123456",
-  username: "user1",
-  bio: "I am cool"
-)
-
-user2 = User.new(
-  email: "user2@lewagon.com",
-  password: "123456",
-  username: "user2",
-  bio: "Nice and happy"
-)
-
-user3 = User.new(
-  email: "user3@lewagon.com",
-  password: "123456",
-  username: "user3",
-  bio: "Have a lot of questions"
-)
-
-user4 = User.new(
-  email: "user4@lewagon.com",
-  password: "123456",
-  username: "user4",
-  bio: "Just wondering about stuff"
-)
-
-user5 = User.new(
-  email: "user5@lewagon.com",
-  password: "123456",
-  username: "user5",
-  bio: "I'm actually a cat"
-)
-
-user6 = User.new(
-  email: "user6@lewagon.com",
-  password: "123456",
-  username: "user6",
-  bio: "Always confused"
-)
-
-user7 = User.new(
-  email: "user7@lewagon.com",
-  password: "123456",
-  username: "user7",
-  bio: "I like to eat ice cream and swim in the sea"
-)
-
-user8 = User.new(
-  email: "user8@lewagon.com",
-  password: "123456",
-  username: "user8",
-  bio: "I have a lot of deep questions"
-)
-
-user9 = User.new(
-  email: "user9@lewagon.com",
-  password: "123456",
-  username: "user9",
-  bio: "I'm here to talk to cool people only"
-)
-
-user10 = User.new(
-  email: "user10@lewagon.com",
-  password: "123456",
-  username: "user10",
-  bio: "I like fashion and movies"
-)
-
-user1.save!
-user2.save!
-user3.save!
-user4.save!
-user5.save!
-user6.save!
-user7.save!
-user8.save!
-user9.save!
-user10.save!
+#random users
+SIZE.times do |n|
+  User.create(email: "user#{n}@lewagon.com", password: "123456", username: "user#{n}", bio: "I am awesome")
+end
 
 puts "Finished creating users"
 
 puts "Creating categories"
 
-category1 = Category.new(
+lifestyle = Category.create(
   name: "Lifestyle",
   color: "#EE5746"
 )
 
-category2 = Category.new(
+food = Category.create(
   name: "Food",
   color: "#FBE462"
 )
 
-category3 = Category.new(
+travel = Category.create(
   name: "Travel",
   color: "#F8A73E"
 )
 
-category4 = Category.new(
+fashion = Category.create(
   name: "Fashion",
   color: "#B684FD"
 )
 
-category5 = Category.new(
+nature = Category.create(
   name: "Nature",
   color: "#6C9B8B"
 )
 
-category6 = Category.new(
+professional = Category.create(
   name: "Professional",
   color: "#ACACAC"
 )
 
-category1.save!
-category2.save!
-category3.save!
-category4.save!
-category5.save!
-category6.save!
-
 puts "Finished creating categories"
-
 
 puts "Creating posts, post categories and post options"
 
+POSTS = [
+  { #post1
+    title: "Which chair should I buy for my livingroom?",
+    description: "I'm really into clean interior design.",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://i.pinimg.com/564x/9b/dd/58/9bdd58e06b4500a9adcd9b7b0b877978.jpg" },
+      { image: "https://i.pinimg.com/564x/61/36/8f/61368f1a241409223472d45e21199023.jpg" }
+    ]
+  },
 
-post1 = Post.new(
-  title: "Which chair should I buy for my livingroom?",
-  description: "I'm really into clean interior design.",
-  kind: "photo",
-)
+  { #post2
+    title: "Where should I live after uni?",
+    description: "Help me decide!!",
+    kind: "text",
+    category: professional,
+    post_options: [
+      { content: "A flatshare - fun but it will be 600 eur a month" },
+      { content: "Back with my parents - less fun but I will save money" }
+    ]
+  },
 
-post2 = Post.new(
-  title: "Where should I live after uni?",
-  description: "Help me decide!!",
-  kind: "text",
-)
+  { #post3
+    title: "Where should I go for my next minibreak? Paris? NY?",
+    description: "Torned between Paris and NY, help!",
+    kind: "photo",
+    category: travel,
+    post_options: [
+      { image: "https://i.pinimg.com/564x/64/4e/f2/644ef26a4b28f51e041aa386e54f80be.jpg" },
+      { image: "https://i.pinimg.com/564x/b6/0c/27/b60c27a17143da1a07cacf182e9cf7ce.jpg" }
+    ]
+  },
 
-post3 = Post.new(
-  title: "Where should I go for my next minibreak?",
-  kind: "photo",
-)
+  { # sponsored post supermarket
+    title: "Sponsored: This week discounts! coffee or tea?",
+    description: "All Copenhagen Irma Locations",
+    kind: "photo",
+    category: food,
+    post_options: [
+      { image: "https://irma.dk/media/608889/349-8910.jpg" },
+      { image: "https://irma.dk/media/1297274/fredsted-beskaaret.jpg" }
+    ]
+  }
 
-post4 = Post.new(
-  title: "I need help deciding which dress to get for a party",
-  kind: "photo",
-)
+  { #post4
+    title: "I need help deciding which top to get for a bbq party",
+    description: "for when it gets chilly after 4pm",
+    kind: "photo",
+    category: fashion,
+    post_options: [
+      { image: "https://s7d5.scene7.com/is/image/UrbanOutfitters/54832936_095_d?$xlarge$&hei=900&qlt=80&fit=constrain" },
+      { image: "https://s7d5.scene7.com/is/image/UrbanOutfitters/54280284_004_b?$xlarge$&hei=900&qlt=80&fit=constrain" }
+    ]
+  },
 
-post5 = Post.new(
-  title: "Help me pick a breed of dog to get!!",
-  description: "I'm gonna get a puppy soon",
-  kind: "photo",
-)
+  { #post5
+    title: "Help me pick a breed of dog to get!!",
+    description: "I'm gonna get a puppy soon",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://s7d5.scene7.com/is/image/UrbanOutfitters/43849520_030_b?$xlarge$&hei=900&qlt=80&fit=constrain" },
+      { image: "https://s7d5.scene7.com/is/image/UrbanOutfitters/43849876_028_b?$xlarge$&hei=900&qlt=80&fit=constrain" }
+    ]
+  },
 
-post6 = Post.new(
-  title: "I need help deciding which job to take",
-  description: "Got two job offers, both sound good so not sure what to do.",
-  kind: "text",
-)
+  { #post6
+    title: " need help deciding which job to take",
+    description: "Got two job offers, both sound good so not sure what to do.",
+    kind: "text",
+    category: professional,
+    post_options: [
+      { content: "big company, not much flexibility but a lot of training" },
+      { content: "startup - a lot of responsibility and flexibility but lower salary and less training" }
+    ]
+  },
 
-post1.user = user1
-post2.user = user2
-post3.user = user4
-post4.user = user5
-post5.user = user9
-post6.user = user3
+  { #post7
+    title: "What should I eat for lunch today?",
+    description: "So hungry and grumpy!",
+    kind: "photo",
+    category: food,
+    post_options: [
+      { image: "https://www.seriouseats.com/recipes/images/2015/03/20150318-ricotta-gnocchi-how-to-food-lab-recipe-37a.jpg" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/72205825_782485378845721_5516537330109046199_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=101&oh=af89f8fda70c3079459bfd13b75155b9&oe=5E825667" }
+    ]
+  },
 
-post_category1 = PostCategory.new
-post_category2 = PostCategory.new
-post_category3 = PostCategory.new
-post_category4 = PostCategory.new
-post_category5 = PostCategory.new
-post_category6 = PostCategory.new
-post_category7 = PostCategory.new
-post_category8 = PostCategory.new
+  { #post8
+    title: "What's healthier?",
+    description: "these are so cute, yummy",
+    kind: "photo",
+    category: food,
+    post_options: [
+      { image: "https://i.pinimg.com/564x/cc/af/74/ccaf74fd55e11d91fe6c50fb8d0b6f38.jpg" },
+      { image: "https://i.pinimg.com/564x/5f/e7/d1/5fe7d15c98411409d22d6af467e718ff.jpg" }
+    ]
+  },
 
-post_option1 = PostOption.new
-post_option2 = PostOption.new
-post_option3 = PostOption.new
-post_option4 = PostOption.new
-post_option5 = PostOption.new
-post_option6 = PostOption.new
-post_option7 = PostOption.new
-post_option8 = PostOption.new
-post_option9 = PostOption.new
-post_option10 = PostOption.new
-post_option11 = PostOption.new
-post_option12 = PostOption.new
+  { #post9
+    title: "Breakup comfort food, help!",
+    description: "I really wanna feel good, so sad!",
+    kind: "photo",
+    category: food,
+    post_options: [
+      { image: "https://i0.wp.com/media.zeinaskitchen.se/2015/01/fish-and-chips-7-e1486452937684.jpg?resize=1080%2C720&ssl=1" },
+      { image: "https://i.pinimg.com/564x/59/f4/95/59f495c8036376f27fe92dc08a1d7583.jpg" }
+    ]
+  },
 
-post_category1.post = post1
-post_category1.category = category1
+  { #post10
+    title: "should I travel alone or w hot date?",
+    description: "Met this totally hot guy on Tinder...",
+    kind: "text",
+    category: travel,
+    post_options: [
+      { content: "I could go to China w hot Tinder date I met a few weeks ago." },
+      { content: "I could go to China alone, find a local date." }
+    ]
+  },
 
-post_category2.post = post2
-post_category2.category = category1
+  { #post11
+    title: "Should I go to Poland in winter?",
+    description: "I live in Denmark, winters are harsh here too",
+    kind: "text",
+    category: travel,
+    post_options: [
+      { content: "Maybe I should go to Poland in winter for 2 weeks this coming holiday break. W FRIENDS" },
+      { content: "Perhaps I should stay here at home in Copenhagen, save money. ALONE W MOM" }
+    ]
+  },
 
-post_category3.post = post3
-post_category3.category = category3
+  { #post12
+    title: "Help! I need new glasses 🤓",
+    description: "Can't see much these days",
+    kind: "photo",
+    category: fashion,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/72321494_1208968899301084_1500559646519241228_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=5d752196211099d462758ab39595c570&oe=5E795259" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/73214070_2614530042001216_7752202555294831367_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=1590735682356a8798dd266b74333f93&oe=5E74D208" }
+    ]
+  },
 
-post_category4.post = post4
-post_category4.category = category1
+  { #post13
+    title: "Which dancing shoes are best for hip-hop?",
+    description: "Can't see much these days",
+    kind: "photo",
+    category: fashion,
+    post_options: [
+      { image: "https://s7d5.scene7.com/is/image/UrbanOutfitters/49278781_023_b?$xlarge$&hei=900&qlt=80&fit=constrain" },
+      { image: "https://s7d5.scene7.com/is/image/UrbanOutfitters/48681548_011_b?$xlarge$&hei=900&qlt=80&fit=constrain" }
+    ]
+  },
 
-post_category5.post = post4
-post_category5.category = category4
+  { #Sponsored post bar
+    title: "Sponsored: Friday discount! Mojitos or Homemade Wine?",
+    description: "Pompette Møllegade 3, 2200 København - 3pm to 5pm",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://content.readymag.com/5b968552eb07570065c93abb/1157701/upload-741c8ba0-b5c6-11e8-a9cf-2f8fb6133b67.jpg" },
+      { image: "https://i.pinimg.com/236x/ae/5e/72/ae5e72e4ba1da1072c3ed1327e72f889.jpg"}
+    ]
+  },
 
-post_category6.post = post5
-post_category6.category = category1
 
-post_category7.post = post5
-post_category7.category = category5
+  { #post14
+    title: "Looking for plants for my garden🌿",
+    description: "Can't see much these days",
+    kind: "photo",
+    category: nature,
+    post_options: [
+      { image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.livingstylelandscapes.com.au%2Flandscaping%2Fwp-content%2Fuploads%2F2014%2F02%2FIMG_0698.jpg&f=1&nofb=1" },
+      { image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.cooltropicalplants.com%2Fimage-files%2Ftropical-garden06.jpg&f=1&nofb=1" }
+    ]
+  },
 
-post_category8.post = post6
-post_category8.category = category6
+  { #post15
+    title: "Good luck plants? which one is good for good fortune?",
+    description: "Can't see much these days",
+    kind: "photo",
+    category: nature,
+    post_options: [
+      { image: "https://s7d5.scene7.com/is/image/UrbanOutfitters/52108032_070_b?$xlarge$&hei=900&qlt=80&fit=constrain" },
+      { image: "https://s7d5.scene7.com/is/image/UrbanOutfitters/49345440_111_d?$xlarge$&hei=900&qlt=80&fit=constrain" }
+    ]
+  },
 
-post_option1.post = post1
-url1 = "https://cdn.homedit.com/wp-content/uploads/2016/07/Elk-chair-from-Gus-Modern.jpg"
-post_option1.remote_image_url = url1
-post_option2.post = post1
-url2 = "http://formula1motor.com/wp-content/uploads/2018/10/modern-hanging-chairs-for-bedrooms-chair-design-ideas-cool-chairs-for-rooms-ball-chair-bubble-hanging-chairs-modern-hanging-chairs-for-bedrooms.jpg"
-post_option2.remote_image_url = url2
+  { #post16
+    title: "What skills are required for pro interior designer?",
+    description: "I want to get a job in interior design",
+    kind: "text",
+    category: professional,
+    post_options: [
+      { content: "Designers make drawings all day by hand" },
+      { content: "I want to get a job in interior design" }
+    ]
+  },
 
-post_option3.post = post2
-post_option3.content = "A flatshare - fun but it will be 600 eur a month"
-post_option4.post = post2
-post_option4.content = "Back with my parents - less fun but I will save money"
+  { #post17
+    title: "Which restaurant in Copenhagen should I work at?",
+    description: "Need to make some $$",
+    kind: "photo",
+    category: professional,
+    post_options: [
+      { image: "https://i.pinimg.com/564x/7a/7d/26/7a7d2690d3eab88046ec3920918b9a45.jpg" },
+      { image: "https://i.pinimg.com/564x/43/fa/b5/43fab5fca343d80608e7881448c2469b.jpg" }
+    ]
+  },
 
-post_option5.post = post3
-url3 = "https://media.tacdn.com/media/attractions-splice-spp-360x240/06/74/aa/fc.jpg"
-post_option5.remote_image_url = url3
-post_option6.post = post3
-url4 = "https://www.ticketsrome.com/images/sampledata/Colosseum_Tickets.jpg"
-post_option6.remote_image_url = url4
+]
 
-post_option7.post = post4
-url5 = "https://i.pinimg.com/originals/61/2d/07/612d077e89311453faa411cd86e8aaba.jpg"
-post_option7.remote_image_url = url5
-post_option8.post = post4
-url6 = "https://images.squarespace-cdn.com/content/v1/5c03e2518ab72242012f3957/1546996225905-XDM46UXTLG9CQDD9O15U/ke17ZwdGBToddI8pDm48kJdeTZ9lEGVUBxRWA2pnC0t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UXPiFDNnJAJdC8WbhgduYJWgEAYatWyHHVqgQTiY9km3tHPusofpPWJvjehE3dllbQ/DSC_0174_ppcopy.jpg"
-post_option8.remote_image_url = url6
+POSTS.each do |post_params|
+  puts "Creating Post"
+  post = Post.new(title: post_params[:title], description: post_params[:description], kind: post_params[:kind], user: User.all.sample)
+  #build categories outside params bc they are not random
+  post.post_categories.build(category: post_params[:category])
+  #build post options
+  post_params[:post_options].each do |option_param|
+    post_option = post.post_options.build(option_param)
+    post_option.remote_image_url = option_param[:image]
+  end
 
-post_option9.post = post5
-url7 = "https://www.petmd.com/sites/default/files/petmd-shaking-puppy.jpg"
-post_option9.remote_image_url = url7
-post_option10.post = post5
-url8 = "https://www.rd.com/wp-content/uploads/2018/02/02_Adorable-Puppy-Pictures-that-Will-Make-You-Melt_556211362_ANURAK-PONGPATIMET-760x506.jpg"
-post_option10.remote_image_url = url8
+  post.save!
 
-post_option11.post = post6
-post_option11.content = "big company, not much flexibility but a lot of training"
-post_option12.post = post6
-post_option12.content = "startup - a lot of responsibility and flexibility but lower salary and less training"
+  # build votes
+  puts "Generating post votes"
+  number = rand(1..10)
+  User.all.sample(number).each do |user|
+    vote = post.post_options.sample.post_votes.build(user: user)
+    vote.save!
+  end
+  # p post.categories
+end
+  puts "Finished creating posts, post categories and post options"
+  puts "Finished creating votes"
 
-post_category1.save!
-post_category2.save!
-post_category3.save!
-post_category4.save!
-post_category5.save!
-post_category6.save!
-post_category7.save!
-post_category8.save!
-
-post_option1.save!
-post_option2.save!
-post_option3.save!
-post_option4.save!
-post_option5.save!
-post_option6.save!
-post_option7.save!
-post_option8.save!
-post_option9.save!
-post_option10.save!
-post_option11.save!
-post_option12.save!
-
-post1.save!
-post2.save!
-post3.save!
-post4.save!
-post5.save!
-post6.save!
-
-puts "Finished creating posts, post categories and post options"
-
-puts "Creating votes"
-
-  vote1 = PostVote.new
-  vote1.user = user1
-  vote1.post_option = post_option1
-
-  vote2 = PostVote.new
-  vote1.user = user2
-  vote1.post_option = post_option1
-
-  vote3 = PostVote.new
-  vote1.user = user3
-  vote1.post_option = post_option1
-
-  vote4 = PostVote.new
-  vote1.user = user4
-  vote1.post_option = post_option1
-
-  vote5 = PostVote.new
-  vote1.user = user1
-  vote1.post_option = post_option3
-
-  vote6 = PostVote.new
-  vote1.user = user2
-  vote1.post_option = post_option4
-
-  vote7 = PostVote.new
-  vote1.user = user3
-  vote1.post_option = post_option3
-
-  vote8 = PostVote.new
-  vote1.user = user5
-  vote1.post_option = post_option6
-
-  vote9 = PostVote.new
-  vote1.user = user7
-  vote1.post_option = post_option7
-
-  vote10 = PostVote.new
-  vote1.user = user8
-  vote1.post_option = post_option10
-
-puts "Finished creating votes"
