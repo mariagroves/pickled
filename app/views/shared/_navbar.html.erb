@@ -49,14 +49,21 @@
             </div>
 
             <% when action_name == "show" %>
-              <%= link_to edit_post_path(@post) do %>
-                <div class="navbar-buttons">
+            <% if current_user == @post.user %>
+              <div class="navbar-buttons">
+                <%= link_to edit_post_path(@post) do %>
                   <div class="big-button-fill" style="background-color: black; color:white">
                     Edit pickle
                   </div>
-                </div>
+                <% end %>
               <!-- </div> -->
-              <% end %>
+                <button id="sweet-alert-delete" class="big-button-fill" style="background-color: #dc3545; color:white">
+                  Delete
+                </button>
+                <%= link_to post_path(@post), method: :delete, id: "delete-link", class: "hidden" do%>
+              </div>
+            <% end %>
+          <% end %>
 
             <% when action_name == "edit" %>
               <div class="navbar-buttons">
