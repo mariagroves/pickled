@@ -1,34 +1,53 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-sm-4">
-      <section class="content">
-        <h2><%= @post.title %></h2>
-          <p><%= @post.description %></p>
-            <% if @post.kind == 'photo' %>
-              <div class="cards">
-                <% @post.post_options.each do |option| %>
-                  <%= render 'shared/image_card', post: @post, option: option %>
-                <% end %>
+      <%= link_to post_path(@post) do %>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-index-info">
+                <div class="card-index-cta">
+                  <div> <p>@<%= @post.user.username %></p> </div>
+                  <div class="index-category-buttons">
+                   <% @post.categories.each do |category| %>
+                    <%= link_to posts_path(category: category.id) do %>
+                      <div class="small-button-fill category" style="background-color: <%= category.color %> ">
+                        <%= category.name %>
+                      </div>
+                    <% end %>
+                   <% end %>
+                  </div>
+                </div>
               </div>
-            <% else %>
-              <div class="cards">
-                <% @post.post_options.each do |option| %>
-                  <%= render 'shared/content_card', post: @post, option: option %>
-                <% end %>
-              </div>
-            <% end %>
-      </section>
-      <div id="comments">
-        <h3>Comments</h3>
-          <% if @post.comments.empty? %>
-            <p id="message">There are no comments for this post!</p>
-          <% else %>
-            <% @post.comments.each do |comment| %>
-                <%= render 'comments/show', comment: comment %>
-            <% end %>
-          <% end %>
-      </div>
-        <%= render 'comments/form', post: @post, comment: Comment.new %>
-    </div>
+              <div class="card-line"></div>
+              <div class="card-index-title"><%= @post.title %></div>
+
+              <% if @post.kind == "photo" %>
+                <%= render 'shared/index-photo-card', post: @post %>
+              <% else %>
+                <%= render 'shared/index-text-card', post: @post %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% unless @post.description.nil? %>
+        <div class="showpage-box">
+              <p><%= @post.description %></p>
+        </div>
+      <% end %>
+
+  <div id="comments" class="showpage-box">
+      <% if @post.comments.empty? %>
+        <div id="message"><p>There are no comments yet for this post!</p></div>
+      <% else %>
+        <% @post.comments.each do |comment| %>
+            <%= render 'comments/show', comment: comment %>
+        <% end %>
+      <% end %>
+  </div>
+
+  <div class="showpage-box comments-form">
+    <p class="comments-add">Add your comment</p>
+<%= render 'comments/form', post: @post, comment: Comment.new, class: "comments-form-box" %>
   </div>
 </div>

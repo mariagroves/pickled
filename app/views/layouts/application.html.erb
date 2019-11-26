@@ -9,12 +9,27 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
+<% if params.has_key?(:category) %>
+  <% selected_category = Category.find(params[:category]) %>
+  <body style="background-color:<%=selected_category.color %>">
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/bottom-buttons' %>
+    <%= render 'sweetify/alert' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
+<% else %>
+  <body style="background-color:#EBEBEB">
+    <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/bottom-buttons' %>
+    <%= render 'sweetify/alert' %>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+  </body>
+<% end %>
+
 </html>
