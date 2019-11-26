@@ -19,7 +19,8 @@ SIZE = 30
 puts "Creating users..."
 #random users
 SIZE.times do |n|
-  User.create(email: "user#{n}@lewagon.com", password: "123456", username: "user#{n}", bio: "I am awesome")
+username = Faker::Games::Pokemon.name
+  User.create(email: "user#{n}@lewagon.com", password: "123456", username: username, bio: "I am awesome")
 end
 
 puts "Finished creating users"
@@ -233,8 +234,8 @@ POSTS = [
     kind: "photo",
     category: nature,
     post_options: [
-      { image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.livingstylelandscapes.com.au%2Flandscaping%2Fwp-content%2Fuploads%2F2014%2F02%2FIMG_0698.jpg&f=1&nofb=1" },
-      { image: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.cooltropicalplants.com%2Fimage-files%2Ftropical-garden06.jpg&f=1&nofb=1" }
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/73079187_1393614110820347_6345274328040251775_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=111&se=7&oh=6a716db87fbb2e253a8e15fbaf069b17&oe=5E7186F1" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/75169225_111093663523514_9161101731496531324_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=102&oh=cd5200bd97e990d2bc9be81f495d1100&oe=5E745C86" }
     ]
   },
 
@@ -346,8 +347,117 @@ POSTS = [
       { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/38640851_1022643977904256_91580548270522368_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&se=7&oh=e5d7a59d055f1cfe83e5a5615fade32c&oe=5E736631" },
       { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/66134652_2158668277578460_2994634930833308216_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=8335d99e0385884693eec23938ab2efa&oe=5E7357CA" }
     ]
-  }
+  },
 
+    { #post25
+    title: "My first car - which color?",
+    description: "Saved enough!",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/72702451_176907463501472_7318890491510311909_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=108&se=8&oh=55333db30938597c3d84acc41b4a48e3&oe=5E6EF6F3" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/71193212_2211145502323102_3038855984447160307_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=110&oh=f5e90631f94e61d93c3dc2d55824507f&oe=5E85C699" }
+    ]
+  },
+
+  { #post26
+    title: "Smile 🤩 or tounge out 👅",
+    description: "Help me choose a post",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/69216002_197450731249438_6683297466017824487_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=110&oh=79157474206c2c375ad76a40d69acb7b&oe=5E8134A5" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/70844783_680998715701932_7084704663062504318_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=100&oh=d7b24af2201487445484a71c4128a5f6&oe=5E74C609" }
+    ]
+  },
+
+  { #post27
+    title: "Ice coffee? アイスコーヒー? latte? ラテ? ",
+    description: "Is it okay to drink ice coffee in winter🥶?",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/75210452_532768440902634_7073097546584771251_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&oh=a1efac9292d276698d86ebcabc928dc9&oe=5E7EA122" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/74526826_447584122809077_7150540111443931897_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=105&oh=ebec5965e3ab6b3925ba19ac6c519f0f&oe=5E73FEF2" }
+    ]
+  },
+
+  { #post28
+    title: "Blue blouse or Camel blouse?",
+    description: "Going to a job interview",
+    kind: "photo",
+    category: professional,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/73521754_162340214867406_2704050833187190721_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&se=7&oh=7f8dc61fdbace8d4c774ace62a111c64&oe=5E783A7B" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/75408716_849569258774202_2336882747526475323_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&se=7&oh=4311b3ed424b29b258e5062e223c56ed&oe=5E71D515" }
+    ]
+  },
+
+  { #post29
+    title: "Going for a nature adventure",
+    description: "Which boots are warmer/comfy?",
+    kind: "photo",
+    category: nature,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/74911529_209963629995312_391471729264341419_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=100&oh=7f4e9b8a4e4fd5720fe3b4e65ce1514a&oe=5E67B037" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/75244346_3390073391010250_5456686446876598522_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=110&oh=a9b91d4ddd2f1519bc5872a9390bbe6c&oe=5E6A261B" }
+    ]
+  },
+
+  { #post30
+    title: "Trying to order some dinner",
+    description: "Local food at a local restaurant",
+    kind: "photo",
+    category: food,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/75272076_2475717209343149_2457055793915752330_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=105&se=7&oh=e027e01b917968b6b24b95a30af919dc&oe=5E748A02" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/71812500_433027634282836_1321102801767093384_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&se=7&oh=59ea6595441d396e8d4644450fc74ebb&oe=5E86A99F" }
+    ]
+  },
+
+  { #post31
+    title: "Stationary advise plsss✏️",
+    description: "What do you recommend?",
+    kind: "photo",
+    category: professional,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/49319631_230346081212011_7743571837614550753_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=107&oh=26bb798409e1631fab7e9a638b774c26&oe=5E898B9E" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/75196203_162219891691021_1356655040880729931_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=101&oh=157e0353c7110af276fc4d9b5595721f&oe=5E66F1C4" }
+    ]
+  },
+
+  { #post32
+    title: "Phone case, Sailor Moon? Pink tiger?",
+    description: "Strong and cute, just like me",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/75239234_1791334907840117_1095811709239284619_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=105&oh=9262fd9378baae534b615c13f21c137a&oe=5E86E453" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/73281263_204272310602022_4037374697786934474_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&oh=92c7f033bb0d4c519d58f19497f17d7b&oe=5E684E52" }
+    ]
+  },
+
+   { #post33
+    title: "Tinder profile pic 💆",
+    description: "Indoors? outdoors? I want to impress the ladies",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/72556387_168172840920963_7531890318550630229_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&se=7&oh=63917590ec6af56fa41b25b1d7b02592&oe=5E6D8348" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/73372157_400815417474022_692010181588884008_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=110&se=7&oh=bf1d6241769f2a3fa6b325ba82323e58&oe=5E677E69" }
+    ]
+  },
+
+   { #post34
+    title: "Kombucha time, which flavour?",
+    description: "Always hard to choose",
+    kind: "photo",
+    category: food,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/76920852_558782824889570_1515107878592076437_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=102&oh=d6f9132ff8fbf8ee32c7ad09cef88038&oe=5E810942" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/65571959_2430429413881679_5293589272981111636_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=111&oh=0d628409d71366517d14ededf6941b12&oe=5E87C254" }
+    ]
+  }
 ]
 
 POSTS.each do |post_params|
