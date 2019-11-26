@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 Comment.destroy_all
 PostCategory.destroy_all
 PostVote.destroy_all
@@ -102,7 +103,7 @@ POSTS = [
       { image: "https://irma.dk/media/608889/349-8910.jpg" },
       { image: "https://irma.dk/media/1297274/fredsted-beskaaret.jpg" }
     ]
-  }
+  },
 
   { #post4
     title: "I need help deciding which top to get for a bbq party",
@@ -255,7 +256,7 @@ POSTS = [
     category: professional,
     post_options: [
       { content: "Designers make drawings all day by hand" },
-      { content: "I want to get a job in interior design" }
+      { content: "Designers make drawings all day on the computer" }
     ]
   },
 
@@ -293,6 +294,16 @@ POSTS.each do |post_params|
     vote.save!
   end
   # p post.categories
+
+  #generating one comment per user
+  puts "Generating comments"
+  User.all.sample(number).each do |user|
+    comment = Comment.new(content: Faker::TvShows::Community.quotes)
+    comment.post = post
+    comment.user = user
+    comment.save!
+  end
+
 end
   puts "Finished creating posts, post categories and post options"
   puts "Finished creating votes"
