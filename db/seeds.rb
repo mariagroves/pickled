@@ -102,7 +102,7 @@ POSTS = [
       { image: "https://irma.dk/media/608889/349-8910.jpg" },
       { image: "https://irma.dk/media/1297274/fredsted-beskaaret.jpg" }
     ]
-  }
+  },
 
   { #post4
     title: "I need help deciding which top to get for a bbq party",
