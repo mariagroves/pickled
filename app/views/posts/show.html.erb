@@ -30,13 +30,15 @@
         </div>
       <% end %>
 
-  <div class="showpage-box">
-        <p><%= @post.description %></p>
-  </div>
+      <% unless @post.description.nil? %>
+        <div class="showpage-box">
+              <p><%= @post.description %></p>
+        </div>
+      <% end %>
 
   <div id="comments" class="showpage-box">
       <% if @post.comments.empty? %>
-        <p>There are no comments yet for this post!</p>
+        <div id="message"><p>There are no comments yet for this post!</p></div>
       <% else %>
         <% @post.comments.each do |comment| %>
             <%= render 'comments/show', comment: comment %>

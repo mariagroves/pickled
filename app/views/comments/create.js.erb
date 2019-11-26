@@ -3,9 +3,9 @@ function refreshForm(innerHTML) {
   newCommentForm.innerHTML = innerHTML;
 }
 
-function addComment(reviewHTML) {
+function addComment(commentHTML) {
   const comments = document.getElementById('comments');
-  comments.insertAdjacentHTML('beforeend', reviewHTML);
+  comments.insertAdjacentHTML('beforeend', commentHTML);
 }
 
 function removeMessage() {
