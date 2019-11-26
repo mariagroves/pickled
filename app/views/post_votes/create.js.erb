@@ -13,16 +13,12 @@ document.querySelectorAll('.option-<%= @post.id %>').forEach((heart) => {
 
   <% if @post_vote.errors.any? %>
     myAlert = document.createElement('div');
-    myAlert.innerHTML = 'You have already voted!' + '<button type=“button” class=“close” data-dismiss=“alert” aria-label=“Close”>' +
-    '<span aria-hidden=“true”>&times;</span></button>';
-    myAlert.classList.add('alert');
-    myAlert.classList.add('alert-danger');
-    myAlert.classList.add('fade');
-    myAlert.classList.add('show');
+    myAlert.innerHTML = '<div class="alert-card">You have already voted!<i class="fas fa-window-close close-alert"></i></div>';
+    myAlert.classList.add('alert-box');
     myAlert.setAttribute('id', 'alert');
 
     myAlert.addEventListener('click', (event) => {
-      event.target.parentNode.removeChild(event.target);
+      event.currentTarget.parentNode.removeChild(event.currentTarget);
     })
     document.getElementById('js-errors').innerHTML = "";
     document.getElementById('js-errors').appendChild(myAlert);
