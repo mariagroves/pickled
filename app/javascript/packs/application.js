@@ -1,4 +1,8 @@
 import "bootstrap";
+import { touch } from '../components/touch';
+touch();
+import { hold } from '../components/touch';
+hold();
 
 $(document).ready(function(){
   $(".category-choice").click(function(){
@@ -6,6 +10,7 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 });
+
 
 import { initSweetalert } from '../components/init_sweetalert';
 
@@ -22,10 +27,10 @@ initSweetalert('#sweet-alert-delete', {
 
 import { blurBody } from '../components/navbar';
 blurBody();
-
 AOS.init();
 
-require("components/form")
 
+
+require("components/form")
 
 
