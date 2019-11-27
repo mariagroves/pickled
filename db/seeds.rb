@@ -45,7 +45,7 @@ lifestyle = Category.create(
 )
 
 work = Category.create(
-  name: "work",
+  name: "Work",
   color: "#EDC5C5" #pastel pink
 )
 
