@@ -1,23 +1,25 @@
-<%= link_to new_post_path do %>
-  <div class="button-add">
-    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="13.3213" y1="28.0708" x2="13.3213" y2="0.0712488" stroke="white" stroke-width="1.5"/>
-      <line x1="0.0712891" y1="13.321" x2="28.0708" y2="13.321" stroke="white" stroke-width="1.5"/>
-    </svg>
-  </div>
+<% unless controller_name == "posts" && action_name == "new"%>
+  <%= link_to new_post_path do %>
+    <div class="button-add">
+      <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="13.3213" y1="28.0708" x2="13.3213" y2="0.0712488" stroke="white" stroke-width="1.5"/>
+        <line x1="0.0712891" y1="13.321" x2="28.0708" y2="13.321" stroke="white" stroke-width="1.5"/>
+      </svg>
+    </div>
+  <% end %>
 <% end %>
-
-
 <% unless controller_name == "pages" && user_signed_in? %>
   <%= link_to dashboard_path do %>
     <div class="button-dash" style="background-image: url('https://i.imgur.com/7B5ATLJ.jpg')"></div>
   <% end %>
-  <div class="button-dash-notification">
-    <%# raise %>
-    <%= @notifications_count %>
-    <%= javascript_tag do %>
-      <% render(:partial => 'shared/notifications', :handlers => [:erb], :formats => [:js]) %>
-    <% end %>
-  </div>
+  <% unless @notifications_count == 0 %>
+    <div class="button-dash-notification">
+      <%= @notifications_count %>
+      <%= javascript_tag do %>
+        <% render(:partial => 'shared/notifications', :handlers => [:erb], :formats => [:js]) %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>
+
 

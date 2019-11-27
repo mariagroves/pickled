@@ -20,7 +20,7 @@ puts "Creating users..."
 #random users
 SIZE.times do |n|
 username = Faker::Games::Pokemon.name
-  User.create(email: "user#{n}@lewagon.com", password: "123456", username: username, bio: "I am awesome")
+  User.create(email: "user#{n}@lewagon.com", password: "123456", username: username, bio: "I am awesome", image: "https://i.imgur.com/7B5ATLJ.jpg")
 end
 
 puts "Finished creating users"
@@ -44,8 +44,8 @@ lifestyle = Category.create(
   color: "#D28EA5" #barbie pink
 )
 
-professional = Category.create(
-  name: "Professional",
+work = Category.create(
+  name: "work",
   color: "#EDC5C5" #pastel pink
 )
 
@@ -81,7 +81,7 @@ POSTS = [
     title: "Where should I live after uni?",
     description: "Help me decide!!",
     kind: "text",
-    category: professional,
+    category: work,
     post_options: [
       { content: "A flatshare - fun but it will be 600 eur a month" },
       { content: "Back with my parents - less fun but I will save money" }
@@ -136,7 +136,7 @@ POSTS = [
     title: " need help deciding which job to take",
     description: "Got two job offers, both sound good so not sure what to do.",
     kind: "text",
-    category: professional,
+    category: work,
     post_options: [
       { content: "big company, not much flexibility but a lot of training" },
       { content: "startup - a lot of responsibility and flexibility but lower salary and less training" }
@@ -258,7 +258,7 @@ POSTS = [
     title: "What skills are required for pro interior designer?",
     description: "I want to get a job in interior design",
     kind: "text",
-    category: professional,
+    category: work,
     post_options: [
       { content: "Designers make drawings all day by hand" },
       { content: "Designers make drawings all day on the computer" }
@@ -269,7 +269,7 @@ POSTS = [
     title: "Which restaurant in Copenhagen should I work at?",
     description: "Need to make some $$",
     kind: "photo",
-    category: professional,
+    category: work,
     post_options: [
       { image: "https://i.pinimg.com/564x/7a/7d/26/7a7d2690d3eab88046ec3920918b9a45.jpg" },
       { image: "https://i.pinimg.com/564x/43/fa/b5/43fab5fca343d80608e7881448c2469b.jpg" }
@@ -390,7 +390,7 @@ POSTS = [
     title: "Blue blouse or Camel blouse?",
     description: "Going to a job interview",
     kind: "photo",
-    category: professional,
+    category: work,
     post_options: [
       { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/73521754_162340214867406_2704050833187190721_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&se=7&oh=7f8dc61fdbace8d4c774ace62a111c64&oe=5E783A7B" },
       { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/75408716_849569258774202_2336882747526475323_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&se=7&oh=4311b3ed424b29b258e5062e223c56ed&oe=5E71D515" }
@@ -423,7 +423,7 @@ POSTS = [
     title: "Stationary advise plsss✏️",
     description: "What do you recommend?",
     kind: "photo",
-    category: professional,
+    category: work,
     post_options: [
       { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/49319631_230346081212011_7743571837614550753_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=107&oh=26bb798409e1631fab7e9a638b774c26&oe=5E898B9E" },
       { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/75196203_162219891691021_1356655040880729931_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=101&oh=157e0353c7110af276fc4d9b5595721f&oe=5E66F1C4" }
