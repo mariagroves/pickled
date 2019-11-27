@@ -11,8 +11,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-<% if params.has_key?(:category) %>
-  <% selected_category = Category.find(params[:category]) %>
+<% if category_id =  params[:category] || @post&.categories&.first&.id  %>
+  <% selected_category = Category.find(category_id) %>
   <body style="background-color:<%=selected_category.color %>">
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
