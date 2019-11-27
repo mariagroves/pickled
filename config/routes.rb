@@ -8,5 +8,14 @@ Rails.application.routes.draw do
       resources :post_votes, only: [ :create ]
     end
   end
+
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
+
+  # API
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      get 'users/:user_id/notifications', to: 'users#notifications_count'
+    end
+  end
 end

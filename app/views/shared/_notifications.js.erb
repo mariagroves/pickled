@@ -1,0 +1,10 @@
+const updateNotification = () => {
+  fetch('/api/v1/users/<%= current_user&.id %>/notifications')
+    .then(response => response.json())
+    .then((data) => {
+      document.querySelector('.button-dash-notification').innerHTML = data.notifications_count;
+  })
+}
+
+window.setInterval(updateNotification, 1000);
+

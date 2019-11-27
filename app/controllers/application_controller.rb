@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
     #   vote = post.post_votes.where('post_votes.created_at BETWEEN ? AND ?', current_user.last_visited, Time.now).count
     #   sum += vote
     # end
-    @notifications_count = current_user.post_votes.where('post_votes.created_at BETWEEN ? AND ?', current_user.last_visited, Time.now).count
+    @notifications_count = current_user.current_notifications_count
   end
 end
