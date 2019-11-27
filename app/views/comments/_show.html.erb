@@ -1,12 +1,13 @@
 <div id="comment-<%=comment.id %>" class="comments-text" >
   <p class="comments-username">@<%= comment.user.username %></p>
-  <p> <%= comment.content %> </p>
+  <p class="comments-content"> <%= comment.content %> </p>
    <% if comment.user == current_user %>
     <%= link_to post_comment_path(comment.post, comment),
         method: :delete,
         remote: true,
         data: { confirm: "Are you sure?" } do %>
-      <p class="comments-delete">Delete</p>
+<!--       <p class="comments-delete">Delete</p>
+ -->  <i class="far fa-trash-alt comments-delete"></i>
     <% end %>
   <% end %>
 </div>
