@@ -299,7 +299,7 @@ POSTS = [
   },
 
   { #post20
-    title: "Rings rings, which nail color is best?",
+    title: "Nails nails, which nail color is best?",
     description: "They're both such pretty colors, its hard to choose",
     kind: "photo",
     category: fashion,
@@ -360,7 +360,7 @@ POSTS = [
     category: lifestyle,
     post_options: [
       { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/72702451_176907463501472_7318890491510311909_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=108&se=8&oh=55333db30938597c3d84acc41b4a48e3&oe=5E6EF6F3" },
-      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/71193212_2211145502323102_3038855984447160307_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=110&oh=f5e90631f94e61d93c3dc2d55824507f&oe=5E85C699" }
+      { image: "https://scontent-frt3-1.cdninstagram.com/v/t51.2885-15/e35/66142804_117849779485820_6631155656571970062_n.jpg?_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_cat=108&oh=c277d2954bcfe72e481b1ee21be814d3&oe=5E84898C" }
     ]
   },
 
