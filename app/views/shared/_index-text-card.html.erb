@@ -1,7 +1,7 @@
 <div class="card-index-texts">
   <% post.post_options.each_with_index do |option, index| %>
       <div class="card-text-box" style="padding-right: 5px;padding-left: 5px;">
-          <div class="card-option-text">
+          <div class="card-touch card-option-text">
             <div class="option-text opt"><%= option.content %></div>
           </div>
           <%= link_to post_post_option_post_votes_path(post, option), remote: true, method: :post do %>
