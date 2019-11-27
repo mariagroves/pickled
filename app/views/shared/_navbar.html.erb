@@ -51,7 +51,7 @@
             <% when action_name == "show" %>
             <% if current_user == @post.user %>
               <div class="navbar-buttons">
-                  <%= link_to "Edit Pickle", post_path(@post), class: "big-button-navbar-black" %>
+                  <%= link_to "Edit Pickle", edit_post_path(@post), class: "big-button-navbar-black" %>
                 <button id="sweet-alert-delete" class="big-button-fill" style="background-color: #dc3545; color:white; border:none; margin-left:5px;">
                   Delete
                 </button>

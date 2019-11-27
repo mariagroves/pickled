@@ -15,11 +15,6 @@ document.querySelectorAll('.option-<%= @post.id %>').forEach((heart) => {
   }
 });
 
-// document.querySelectorAll('.opt-card-<%#= option.post.id %>').forEach((card) => {
-//   console.log(card);
-// });
-
-
   <% if @post_vote.errors.any? %>
     myAlert = document.createElement('div');
     myAlert.innerHTML = '<div class="alert-card">You have already voted!<i class="fas fa-window-close close-alert"></i></div>';
