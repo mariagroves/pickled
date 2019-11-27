@@ -33,6 +33,10 @@ class User < ApplicationRecord
     own_votes.count
   end
 
+  def current_notifications_count
+    post_votes.where('post_votes.created_at BETWEEN ? AND ?', last_visited, Time.now).count
+  end
+
   def has_voted?(post)
     # returns true if the user has a post vote for a post option of this post
     own_votes.where(post_option: post.post_options).any?
