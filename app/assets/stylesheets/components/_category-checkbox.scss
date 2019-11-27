@@ -32,12 +32,15 @@
   border-radius: 16px;
   opacity: .4;
   text-align: center;
-  &:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
+  margin-top: 0.5rem;
+  color: black;
+  font-weight: bold;
+  // &:hover {
+  //   opacity: 1;
+  //   cursor: pointer;
+  // }
   &.active {
-  background: $pickle;
+  // background: $pickle;
   color: white;
   opacity: 1;
   }
