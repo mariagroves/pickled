@@ -29,7 +29,7 @@
 .alert-box {
     display: flex;
     position: fixed;
-    top: 40%;
+    top: 45%;
     /* right: 22%; */
     z-index: 10000;
     width: 100vw;
@@ -39,15 +39,16 @@
   .alert-card {
     position:fixed;
     margin: auto;
-    width: 80%;
-    height: 100%;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 52px;
     background: $red ;
-    padding: 30px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align:center;
-    font-size: 40px;
+    font-size: 20px;
     line-height: 100%;
     color: white;
     border-radius: 16px;
