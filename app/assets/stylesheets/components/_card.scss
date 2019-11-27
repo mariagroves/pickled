@@ -124,6 +124,12 @@
 
 // DASHBOARD
 
+.card-title {
+  font-size: 32px;
+  line-height: 100%;
+  color: white;
+}
+
 .card-dash {
   padding: 0;
   display: flex;
@@ -144,6 +150,11 @@
   display: flex;
   justify-content: space-between;
   padding: 8px 10px 10px 10px;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  height: 36px;
 }
 
 .card-dash-cta {
@@ -152,12 +163,33 @@
   justify-content:space-between;
   padding-top: 3px;
   padding-bottom: 4px;
+  height: 25px;
 }
 
 .card-dash-index {
   display: flex;
   align-items: flex-end;
   justify-content:space-between;
+}
+
+.small-button-fill-dash {
+  border-radius: 50px;
+  padding: 4px 10px;
+  color: white;
+  background-color: #1EDD88;
+  font-size: 14px;
+  height:26px;
+  display:flex;
+  align-items:center;
+  border: 1px solid white;
+}
+
+.card-votes {
+  color: white;
+}
+
+.card-date {
+  color: white;
 }
 
 
