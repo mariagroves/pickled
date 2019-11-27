@@ -38,11 +38,14 @@
 }
 
 .card-index-title {
+  font-family: 'Chakra Petch', sans-serif;
+  // font-family: 'Cormorant Upright', serif;
   font-size: 32px;
-  line-height: 100%;
-  padding: 15px 10px 0 10px;
+  line-height: 110%;
+  padding: 15px 10px 0px 10px;
   letter-spacing: -0.01em;
   line-height: 107.9%;
+  text-align: center;
 }
 
 .card-index-cta {
@@ -94,7 +97,7 @@
 .card-index-texts {
   display: flex;
   align-items: stretch;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 5px;
 }
 
