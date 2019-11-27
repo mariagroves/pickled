@@ -17,8 +17,21 @@ document.querySelectorAll('.option-<%= @post.id %>').forEach((heart) => {
 
   <% if @post_vote.errors.any? %>
     myAlert = document.createElement('div');
-    myAlert.innerHTML = '<div class="alert-card">You have already voted!<i class="fas fa-window-close close-alert"></i></div>';
+    myAlert.innerHTML = '<div class="alert-card">You have already voted</div>';
     myAlert.classList.add('alert-box');
+
+    myAlert.classList.add('fade-in');
+
+
+    setTimeout(function() {
+      myAlert.classList.add('shake-horizontal');
+    }, 150);
+
+        setTimeout(function() {
+      myAlert.classList.add('disappear');
+    }, 1200);
+
+
     myAlert.setAttribute('id', 'alert');
 
     myAlert.addEventListener('click', (event) => {

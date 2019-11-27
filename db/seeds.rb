@@ -27,35 +27,39 @@ puts "Finished creating users"
 
 puts "Creating categories"
 
-lifestyle = Category.create(
-  name: "Lifestyle",
-  color: "#EE5746"
-)
+nature = Category.create(
+  name: "Nature",
+  color: "#4F93B0" #blue
 
-food = Category.create(
-  name: "Food",
-  color: "#FBE462"
-)
-
-travel = Category.create(
-  name: "Travel",
-  color: "#F8A73E"
 )
 
 fashion = Category.create(
   name: "Fashion",
-  color: "#B684FD"
+  color: "#6C9B8B" #green
+
 )
 
-nature = Category.create(
-  name: "Nature",
-  color: "#6C9B8B"
+lifestyle = Category.create(
+  name: "Lifestyle",
+  color: "#D28EA5" #barbie pink
 )
 
 professional = Category.create(
   name: "Professional",
-  color: "#ACACAC"
+  color: "#EDC5C5" #pastel pink
 )
+
+food = Category.create(
+  name: "Food",
+  color: "#EAC29F" #pastel yellow
+)
+
+travel = Category.create(
+  name: "Travel",
+  color: "#A287A8" #lilac
+)
+
+
 
 puts "Finished creating categories"
 

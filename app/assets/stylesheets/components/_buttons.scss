@@ -227,18 +227,18 @@
 }
 
 .border-tie {
-  border: 3px solid $orange;
-  border-radius: 16px;
+  box-shadow: 0 0 0 2.5px $orange;
+  border: none;
 }
 
 .border-win {
-  border: 3px solid #5EBB8E;
-  border-radius: 16px;
+  box-shadow: 0 0 0 2.5px #5EBB8E;
+  border: none;
 }
 
 .border-lose {
-  border: 3px solid #EE5746;
-  border-radius: 16px;
+  box-shadow: 0 0 0 2.5px #EE5746;
+  border: none;
 }
 
 .btn-danger{
