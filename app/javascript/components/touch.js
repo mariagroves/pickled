@@ -31,10 +31,10 @@ const hold = () => {
 
     manager.on('press pressup', function(e) {
       if (e.type == "press"){
-        e.target.classList.add('blur');
+        e.target.classList.add('expand');
       }
       if (e.type =="pressup"){
-        e.target.classList.remove('blur');
+        e.target.classList.remove('expand');
       }
     });
   });
