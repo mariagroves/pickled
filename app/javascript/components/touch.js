@@ -1,7 +1,7 @@
 import * as Hammer from "hammerjs";
 
 const touch = () => {
-  const optionImage = document.querySelectorAll(".card-option-image");
+  const optionImage = document.querySelectorAll(".card-touch");
   optionImage.forEach((image) => {
     const manager = new Hammer.Manager(image);
     const DoubleTap = new Hammer.Tap({
@@ -20,11 +20,11 @@ const touch = () => {
 export { touch };
 
 const hold = () => {
-  const holdImage = document.querySelectorAll(".card-option-image");
+  const holdImage = document.querySelectorAll(".card-touch");
   holdImage.forEach((image) => {
     const manager = new Hammer.Manager(image);
     const Press = new Hammer.Press({
-      time: 300
+      time: 500
     });
 
     manager.add(Press);
