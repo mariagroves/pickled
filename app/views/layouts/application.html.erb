@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no” />
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
 <% if category_id =  params[:category] || @post&.categories&.first&.id  %>

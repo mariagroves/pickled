@@ -42,4 +42,10 @@ class User < ApplicationRecord
     own_votes.where(post_option: post.post_options).any?
     # else returns false
   end
+
+  def has_voted_option?(option)
+    # returns true if the user has a post vote for a post option of this post
+    own_votes.where(post_option: option).any?
+    # else returns false
+  end
 end
