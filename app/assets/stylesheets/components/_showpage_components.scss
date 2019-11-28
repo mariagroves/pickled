@@ -14,7 +14,7 @@
 }
 
 .showpage-description {
-  font-size: 14px;
+  font-size: 17px;
 }
 .comments-text {
   display: flex;
@@ -34,12 +34,15 @@
 
 .comments-content {
   padding-right: 20px;
+  font-size: 14px;
+
 }
 
 .comments-username {
   margin: 7px 0px 3px 0px;
   color: $gray;
-  padding-right: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
 }
 
 .comments-add {
