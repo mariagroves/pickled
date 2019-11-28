@@ -66,7 +66,30 @@ puts "Finished creating categories"
 puts "Creating posts, post categories and post options"
 
 POSTS = [
-  { #post1
+
+  {
+    title: "Late Sunday breakfast options",
+    description: "Whats more delish? 💕",
+    kind: "photo",
+    category: food,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/73278648_2128536884117287_1644905258954337614_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=107&oh=9b47e754ed50c6f3895384f35ca0c6aa&oe=5E764170" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/70406535_153721612395429_2467228445631022106_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=109&oh=d4ccc09527aa41f144e082b1c3b19304&oe=5E75F980" }
+    ]
+  },
+
+  {
+    title: "What should I wear while pregnant🤰",
+    description: "So fat! I still wanna look good",
+    kind: "photo",
+    category: fashion,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/65783910_495240754544917_2362018459531406083_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=101&oh=3ac6ebb4ec7e995dcf97e9b94b5761d3&oe=5E7532FD" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/65953505_2314337295474158_2983193857441811966_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=102&oh=5a89f06e50157b685423ab78675fdfca&oe=5E6CDE16" }
+    ]
+  },
+
+  {
     title: "Which chair should I buy for my livingroom?",
     description: "I'm really into clean interior design.",
     kind: "photo",
@@ -77,7 +100,7 @@ POSTS = [
     ]
   },
 
-  { #post2
+  {
     title: "Where should I live after uni?",
     description: "Help me decide!!",
     kind: "text",
@@ -88,7 +111,7 @@ POSTS = [
     ]
   },
 
-  { #post3
+  {
     title: "Where should I go for my next minibreak? Paris? NY?",
     description: "Torned between Paris and NY, help!",
     kind: "photo",
@@ -110,7 +133,8 @@ POSTS = [
     ]
   },
 
-  { #post4
+
+  {
     title: "I need help deciding which top to get for a bbq party",
     description: "for when it gets chilly after 4pm",
     kind: "photo",
@@ -121,7 +145,18 @@ POSTS = [
     ]
   },
 
-  { #post5
+  {
+    title: "Art decisions, which one is more artsy?",
+    description: "Need to print only one",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/65944011_2161480843960704_7381176663259906134_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=100&oh=0be1ef50a98ab4944fcc4619906b4814&oe=5E871EAB" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/65586827_133854334486518_8314387582186460958_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=106&oh=5180e3a56ea49554bcdfdc76e2c346b6&oe=5E833AC4" }
+    ]
+  },
+
+  {
     title: "Help me pick a breed of dog to get!!",
     description: "I'm gonna get a puppy soon",
     kind: "photo",
@@ -132,7 +167,7 @@ POSTS = [
     ]
   },
 
-  { #post6
+  {
     title: " need help deciding which job to take",
     description: "Got two job offers, both sound good so not sure what to do.",
     kind: "text",
@@ -143,7 +178,18 @@ POSTS = [
     ]
   },
 
-  { #post7
+  { #sponsored undies
+    title: "Sponsored: What is your ideal self care routine?",
+    description: "Selfcare is important, specially in your period",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://cdn.shopify.com/s/files/1/0795/1599/t/166/assets/collection-crimson-4.jpg?536312" },
+      { image: "https://cdn.shopify.com/s/files/1/0795/1599/t/166/assets/collection-crimson-1.jpg?536312" }
+    ]
+  },
+
+  {
     title: "What should I eat for lunch today?",
     description: "So hungry and grumpy!",
     kind: "photo",
@@ -154,7 +200,7 @@ POSTS = [
     ]
   },
 
-  { #post8
+  {
     title: "What's healthier?",
     description: "these are so cute, yummy",
     kind: "photo",
@@ -165,7 +211,7 @@ POSTS = [
     ]
   },
 
-  { #post9
+  {
     title: "Breakup comfort food, help!",
     description: "I really wanna feel good, so sad!",
     kind: "photo",
@@ -176,7 +222,7 @@ POSTS = [
     ]
   },
 
-  { #post10
+  {
     title: "should I travel alone or w hot date?",
     description: "Met this totally hot guy on Tinder...",
     kind: "text",
@@ -187,7 +233,7 @@ POSTS = [
     ]
   },
 
-  { #post11
+  {
     title: "Should I go to Poland in winter?",
     description: "I live in Denmark, winters are harsh here too",
     kind: "text",
@@ -198,7 +244,7 @@ POSTS = [
     ]
   },
 
-  { #post12
+  {
     title: "Help! I need new glasses 🤓",
     description: "Can't see much these days",
     kind: "photo",
@@ -209,7 +255,7 @@ POSTS = [
     ]
   },
 
-  { #post13
+  {
     title: "Which dancing shoes are best for hip-hop?",
     description: "Can't see much these days",
     kind: "photo",
@@ -232,7 +278,7 @@ POSTS = [
   },
 
 
-  { #post14
+  {
     title: "Looking for plants for my garden🌿",
     description: "Can't see much these days",
     kind: "photo",
@@ -243,7 +289,7 @@ POSTS = [
     ]
   },
 
-  { #post15
+  {
     title: "Good luck plants? which one is good for good fortune?",
     description: "Can't see much these days",
     kind: "photo",
@@ -254,7 +300,7 @@ POSTS = [
     ]
   },
 
-  { #post16
+  {
     title: "What skills are required for pro interior designer?",
     description: "I want to get a job in interior design",
     kind: "text",
@@ -265,7 +311,7 @@ POSTS = [
     ]
   },
 
-  { #post17
+  {
     title: "Which restaurant in Copenhagen should I work at?",
     description: "Need to make some $$",
     kind: "photo",
@@ -276,7 +322,7 @@ POSTS = [
     ]
   },
 
-   { #post18
+   {
     title: "With or without coffee?",
     description: "Not sure what to post to IG",
     kind: "photo",
@@ -287,7 +333,7 @@ POSTS = [
     ]
   },
 
-  { #post19
+  {
     title: "Help me choose best look green or black?",
     description: "Thanks Giving dinner party",
     kind: "photo",
@@ -298,7 +344,18 @@ POSTS = [
     ]
   },
 
-  { #post20
+  { #sponsored natural condoms
+    title: "Sponsored: safe fun times",
+    description: "Black Friday Discounts🎅",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://dxkmbl8uwuv9p.cloudfront.net/sustain-natural/1533780500389/faada700-77ab-4736-a4ff-5ab1833d6173/UTCONDOMS1.jpg" },
+      { image: "https://dxkmbl8uwuv9p.cloudfront.net/sustain-natural/1548161455726/86ee302f-bbe9-4f54-85ce-03c1b61e606d/Unscented_lube_pdp_1_with_sticker.jpg" }
+    ]
+  },
+
+  {
     title: "Nails nails, which nail color is best?",
     description: "They're both such pretty colors, its hard to choose",
     kind: "photo",
@@ -309,7 +366,7 @@ POSTS = [
     ]
   },
 
-  { #post21
+  {
     title: "Can you help me choose a first date dress?",
     description: "Love them both. We are having French food tonight",
     kind: "photo",
@@ -320,7 +377,7 @@ POSTS = [
     ]
   },
 
-  { #post22
+  {
     title: "Help me choose my gf's bday present :)",
     description: "She loves pottery, artsy stuff. Turning 25!",
     kind: "photo",
@@ -331,7 +388,7 @@ POSTS = [
     ]
   },
 
-  { #post23
+  {
     title: "Which one should I plant?",
     description: "I love happy colors and beautiful flowers",
     kind: "photo",
@@ -342,7 +399,18 @@ POSTS = [
     ]
   },
 
-  { #post24
+  { #Sponsored Oatly
+    title: "Sponsored: The Original🥛 or Chocolate?🍫",
+    description: "Whats your fav?",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/69830784_134828871145607_797618568448897845_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=111&oh=296de5fa1d38e1efa34373bd7fce3c3e&oe=5E7D7388" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/fr/e15/s1080x1080/33559520_181916839181679_5415296363971739648_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&oh=833a4cce618fa396e2926138e9bf065c&oe=5E8BC74D" }
+    ]
+  },
+
+  {
     title: "Picnic outfit, what should I wear?",
     description: "I want to express my strong femininity",
     kind: "photo",
@@ -353,7 +421,7 @@ POSTS = [
     ]
   },
 
-    { #post25
+  {
     title: "My first car - which color?",
     description: "Saved enough!",
     kind: "photo",
@@ -364,7 +432,18 @@ POSTS = [
     ]
   },
 
-  { #post26
+  { #Sponsored
+    title: "Sponsored: skin care - scrub or polish?",
+    description: "This winter, what does your skin need?",
+    kind: "photo",
+    category: lifestyle,
+    post_options: [
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/74570250_573168276779254_5031146298179468413_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=1&oh=1dca0605a2300619e6330a0d37533bd2&oe=5E8B2C37" },
+      { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/71831618_132417654389600_4603051465697380127_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=108&oh=0e6886baedffaec49c697eef1e48a9d1&oe=5E6A2510" }
+    ]
+  },
+
+  {
     title: "Smile 🤩 or tounge out 👅",
     description: "Help me choose a post",
     kind: "photo",
@@ -375,7 +454,7 @@ POSTS = [
     ]
   },
 
-  { #post27
+  {
     title: "Ice coffee? アイスコーヒー? latte? ラテ? ",
     description: "Is it okay to drink ice coffee in winter🥶?",
     kind: "photo",
@@ -386,7 +465,7 @@ POSTS = [
     ]
   },
 
-  { #post28
+  {
     title: "Blue blouse or Camel blouse?",
     description: "Going to a job interview",
     kind: "photo",
@@ -397,7 +476,7 @@ POSTS = [
     ]
   },
 
-  { #post29
+  {
     title: "Going for a nature adventure",
     description: "Which boots are warmer/comfy?",
     kind: "photo",
@@ -408,7 +487,7 @@ POSTS = [
     ]
   },
 
-  { #post30
+  {
     title: "Trying to order some dinner",
     description: "Local food at a local restaurant",
     kind: "photo",
@@ -419,7 +498,7 @@ POSTS = [
     ]
   },
 
-  { #post31
+  {
     title: "Stationary advise plsss✏️",
     description: "What do you recommend?",
     kind: "photo",
@@ -430,7 +509,7 @@ POSTS = [
     ]
   },
 
-  { #post32
+  {
     title: "Phone case, Sailor Moon? Pink tiger?",
     description: "Strong and cute, just like me",
     kind: "photo",
@@ -441,7 +520,7 @@ POSTS = [
     ]
   },
 
-   { #post33
+   {
     title: "Tinder profile pic 💆",
     description: "Indoors? outdoors? I want to impress the ladies",
     kind: "photo",
@@ -452,7 +531,7 @@ POSTS = [
     ]
   },
 
-   { #post34
+   {
     title: "Kombucha time, which flavour?",
     description: "Always hard to choose",
     kind: "photo",
@@ -462,6 +541,7 @@ POSTS = [
       { image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/65571959_2430429413881679_5293589272981111636_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=111&oh=0d628409d71366517d14ededf6941b12&oe=5E87C254" }
     ]
   }
+
 ]
 
 POSTS.each do |post_params|
@@ -479,7 +559,7 @@ POSTS.each do |post_params|
 
   # build votes
   puts "Generating post votes"
-  number = rand(1..10)
+  number = rand(100..400)
   User.all.sample(number).each do |user|
     vote = post.post_options.sample.post_votes.build(user: user)
     vote.save!
