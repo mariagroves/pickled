@@ -17,7 +17,7 @@
         <div class="d-flex">
           <%= f.simple_fields_for :post_options do |p| %>
               <%= p.input :content, :as => :string, label: 'Option' %>
-             <label class="form-button post_post_options_image">
+             <label class="form-button-photo post_post_options_image">
                 Upload
                 <span style="display:none;">
                   <%= p.file_field :image, label: 'Option' %>

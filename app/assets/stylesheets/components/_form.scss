@@ -11,6 +11,38 @@
   background: white;
 }
 
+.form-button-photo {
+  margin-right: 10px;
+  margin-left: 7px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-family: $my-font;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 11px 26px;
+  background-color: #ACACAC;
+  color: white;
+  border-radius: 50px;
+  border: none;
+}
+
+.form-button-active {
+  margin-right: 10px;
+  margin-left: 7px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-family: $my-font;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 11px 26px;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  background-color: $pickle;
+}
+
 .form-button {
   margin-right: 10px;
   margin-left: 7px;
