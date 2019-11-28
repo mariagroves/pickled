@@ -16,8 +16,10 @@
     <% if post.user_id == current_user.id %>
         <div class="row">
           <div class="col">
-            <% post.categories.each do |category| %>
+            <% post.categories.each_with_index do |category, index| %>
+            <% if index == 0 %>
             <div class="card-dash" style="background-color: <%= category.color %>">
+            <% end %>
             <% end %>
               <div class="card-stats">
                 <div class="card-votes">
