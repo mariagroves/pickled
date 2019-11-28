@@ -743,7 +743,7 @@ post6.save!
 francois_posts = [post1, post2, post3, post4, post5, post6]
 
 francois_posts.each do |post|
-  number = rand(1...5)
+  number = rand(100...500)
   User.all.sample(number).each do |user|
     vote = post.post_options.sample.post_votes.build(user: user)
     vote.save! unless user == user1
