@@ -3,8 +3,11 @@ const updateNotification = () => {
     .then(response => response.json())
     .then((data) => {
       document.querySelector('.button-dash-notification').innerHTML = data.notifications_count;
+      if (data.notifications_count !== 0) {
+        document.querySelector('.button-dash-notification').style.opacity = "1"
+      };
   })
 }
 
-window.setInterval(updateNotification, 10000);
+window.setInterval(updateNotification, 2000);
 

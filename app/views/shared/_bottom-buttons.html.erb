@@ -12,14 +12,12 @@
   <%= link_to dashboard_path do %>
     <div class="button-dash" style="background-image: url('https://i.imgur.com/7B5ATLJ.jpg')"></div>
   <% end %>
-  <% unless @notifications_count == 0 %>
-    <div class="button-dash-notification">
+    <div class="button-dash-notification" style="opacity:0">
       <%= @notifications_count %>
       <%= javascript_tag do %>
         <% render(:partial => 'shared/notifications', :handlers => [:erb], :formats => [:js]) %>
       <% end %>
     </div>
-  <% end %>
 <% end %>
 
 
