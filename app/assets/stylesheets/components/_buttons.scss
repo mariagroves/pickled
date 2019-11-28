@@ -254,11 +254,11 @@
 }
 
 .choice-button {
-  width: 20px;
-  border-radius: 50%;
-  background-color: white;
   position: absolute;
-  top: 20px;
-  right: 10px;
-  border: 1px solid #dbd9d9;
+  top: 5px;
+  right: 5px;
+  fill: white !important;
+  -webkit-filter: drop-shadow( 0px 0px 2px rgba(0, 0, 0, .4));
+  filter: drop-shadow( 0px 0px 2px rgba(0, 0, 0, .4));
+  opacity: .94;
 }

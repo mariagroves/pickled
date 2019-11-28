@@ -16,7 +16,7 @@ document.querySelectorAll('.option-<%= @post.id %>').forEach((heart) => {
 });
 
 document.querySelectorAll('.card-option-<%=@post_option.id%>').forEach((option) => {
-  option.insertAdjacentHTML('beforeend','<div class="choice-button"><i class="fas fa-check"></i></div>' );
+  option.insertAdjacentHTML('beforeend','<div class="choice-button"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5225 20 20 15.5229 20 10C20 4.47705 15.5225 0 10 0C4.47754 0 0 4.47705 0 10C0 15.5229 4.47754 20 10 20ZM9.08496 15.4216L16.7529 6.65845L15.2471 5.34155L8.91504 12.5784L4.66895 8.75684L3.33105 10.2434L9.08496 15.4216Z" fill="#FFFFFF" /></svg></div>' );
 })
 
   <% if @post_vote.errors.any? %>
