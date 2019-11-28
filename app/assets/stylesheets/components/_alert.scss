@@ -1,4 +1,5 @@
 .alert {
+  display: none;
   position: fixed;
   width: 50%;
   height: 25%;
@@ -10,21 +11,21 @@
   vertical-align: middle;
 }
 
-.alert-danger{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+// .alert-danger{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+// }
 
-.close-alert {
-    top: 8px;
-    right: 8px;
-    color: #EE5746;
-    cursor: pointer !important;
-    z-index: 12000;
-    position: absolute;
-}
+// .close-alert {
+//     top: 8px;
+//     right: 8px;
+//     color: #EE5746;
+//     cursor: pointer !important;
+//     z-index: 12000;
+//     position: absolute;
+// }
 
 .alert-box {
     display: flex;
