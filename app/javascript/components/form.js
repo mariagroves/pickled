@@ -12,15 +12,20 @@ const showAppropriateFields = () => {
         imageField.classList.remove('hide');
       })
     } else if (selectedValue === "photo") {
-      document.querySelectorAll(`.post_post_options_image`).forEach((imageField) => {
+      document.querySelectorAll('[class*="post_post_options_image"]').forEach((imageField) => {
         imageField.classList.remove('hide');
       })
     }
-
-
-
 }
 
 showAppropriateFields();
 
 selector.addEventListener('change', showAppropriateFields)
+
+const buttons = document.querySelectorAll('.form-button-photo');
+
+buttons.forEach((button) => {
+  button.addEventListener("click", function(){
+    button.classList.add('form-button-active');
+  })
+})
