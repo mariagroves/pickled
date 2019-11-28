@@ -81,11 +81,11 @@
             </div>
           <% end %>
 
-          <% if controller_name == "pages" && action_name == "home" %>
-            <div class="navbar-buttons">
-              <%= link_to "Browse the pickles", fake_log_in_path, class: "big-button-navbar-black", method: :post %>
-            </div>
-          <% end %>
+          <%# if controller_name == "pages" && action_name == "home" %>
+            <!-- <div class="navbar-buttons"> -->
+              <%#= link_to "Browse the pickles", fake_log_in_path, class: "big-button-navbar-black", method: :post %>
+            <!-- </div> -->
+          <%# end %>
 
           <% if controller_name == "devise/registrations" && action_name == "edit" %>
             <div class="navbar-buttons">
