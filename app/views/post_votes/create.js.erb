@@ -17,7 +17,7 @@ document.querySelectorAll('.option-<%= @post.id %>').forEach((heart) => {
 
   <% if @post_vote.errors.any? %>
     myAlert = document.createElement('div');
-    myAlert.innerHTML = '<div class="alert-card">You have already voted</div>';
+    myAlert.innerHTML = '<div class="alert-card"><%= @post_vote.errors.messages[:post_option].first %></div>';
     myAlert.classList.add('alert-box');
 
     myAlert.classList.add('fade-in');
