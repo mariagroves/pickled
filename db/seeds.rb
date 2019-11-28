@@ -14,7 +14,7 @@ Category.destroy_all
 Post.destroy_all
 User.destroy_all
 #size is used later many times
-SIZE = 30
+SIZE = 1200
 
 puts "Creating users..."
 #random users
@@ -546,7 +546,8 @@ POSTS = [
 
 POSTS.each do |post_params|
   puts "Creating Post"
-  post = Post.new(title: post_params[:title], description: post_params[:description], kind: post_params[:kind], user: User.all.sample)
+  user = User.all.first(30).sample
+  post = Post.new(title: post_params[:title], description: post_params[:description], kind: post_params[:kind], user: user)
   #build categories outside params bc they are not random
   post.post_categories.build(category: post_params[:category])
   #build post options
@@ -558,15 +559,16 @@ POSTS.each do |post_params|
   post.save!
 
   # build votes
+  number_votes = rand(800..1200)
   puts "Generating post votes"
-  number = rand(100..400)
-  User.all.sample(number).each do |user|
+  User.all.sample(number_votes).each do |user|
     vote = post.post_options.sample.post_votes.build(user: user)
     vote.save!
   end
   # p post.categories
 
   #generating one comment per user
+  number = rand(10..40)
   puts "Generating comments"
   User.all.sample(number).each do |user|
     comment = Comment.new(content: Faker::TvShows::Community.quotes)
