@@ -1,10 +1,10 @@
 
 <div class="user-info-container">
-  <img src=<%=current_user.image%> alt="" class="avatar">
+  <img src=<%=current_user.image%> alt="" class="avatar" style="object-fit: cover">
   <div class="user-details">
     <div class="username"><%= current_user.username %></div>
     <div class="user-rank">Rank - Pickle Guru</div>
-    <div class="user-bio">Born in Russia, Raised in the UK 🇷🇺 🇬🇧</div>
+    <div class="user-bio"> <%= current_user.bio %></div>
   </div>
 </div>
 

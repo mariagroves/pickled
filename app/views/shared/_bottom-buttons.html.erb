@@ -1,4 +1,4 @@
-<% unless controller_name == "posts" && action_name == "new"%>
+<% unless controller_name == "posts" && action_name == "new"  || controller_name == "pages" && action_name == "home" || controller_name == "sessions" %>
   <%= link_to new_post_path do %>
     <div class="button-add">
       <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,9 +8,9 @@
     </div>
   <% end %>
 <% end %>
-<% unless controller_name == "pages" && user_signed_in? %>
+<% unless controller_name == "pages" && user_signed_in? || controller_name == "pages" && action_name == "home" || controller_name == "sessions" %>
   <%= link_to dashboard_path do %>
-    <div class="button-dash" style="background-image: url('https://i.imgur.com/7B5ATLJ.jpg')"></div>
+    <div class="button-dash" style="background-image: url(<%= current_user.image %>)"></div>
   <% end %>
     <div class="button-dash-notification" style="opacity:0">
       <%= @notifications_count %>

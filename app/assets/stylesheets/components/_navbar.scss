@@ -121,5 +121,15 @@
   background-color: $black;
   color: white;
   border-radius: 50px;
+
+  &:hover {
+    color: white !important;
+    opacity: .75 !important;
+  }
+
+  &:active {
+    color: white !important;
+    opacity: .75 !important;
+  }
 }
 

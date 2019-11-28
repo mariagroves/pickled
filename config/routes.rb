@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'posts#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post "fake_log_in", to: 'pages#fake_log_in', as: :fake_log_in
+
   resources :posts do
     resources :comments, only: [ :create, :destroy ]
     resources :post_options, only: [ :new, :create, :edit, :update, :destroy ] do
