@@ -4,6 +4,7 @@ class PostVotesController < ApplicationController
     @post_vote = PostVote.new(post_vote_params)
     @post = Post.find(params[:post_id])
     @post_vote.user = current_user
+    @post_option = @post_vote.post_option
 
     # if
     @post_vote.save

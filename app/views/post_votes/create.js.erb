@@ -15,6 +15,10 @@ document.querySelectorAll('.option-<%= @post.id %>').forEach((heart) => {
   }
 });
 
+document.querySelectorAll('.card-option-<%=@post_option.id%>').forEach((option) => {
+  option.insertAdjacentHTML('beforeend','<div class="choice-button"><i class="fas fa-check"></i></div>' );
+})
+
   <% if @post_vote.errors.any? %>
     myAlert = document.createElement('div');
     myAlert.innerHTML = '<div class="alert-card"><%= @post_vote.errors.messages[:post_option].first %></div>';
