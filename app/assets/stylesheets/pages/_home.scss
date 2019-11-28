@@ -1,1 +1,48 @@
 // Specific CSS for your home-page
+
+.bubbles-row {
+}
+
+.bubble {
+  margin-top: 20px;
+  padding: 20px 15px 20px 15px;
+  border-radius: 24px;
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 38px;
+  color: white;
+  line-height: 92%;
+
+  &.green {
+    margin-top:10px;
+    background: #6C9B8B;
+    width:auto;
+
+  }
+
+  &.pink {
+    background: #D28EA5;
+    width:auto;
+
+  }
+
+  &.purple {
+    background: #A287A8;
+    width:auto;
+  }
+}
+
+
+.big-button-dash {
+  font-family: $my-font;
+  font-size: 20px;
+  margin-top:20px;
+  line-height: 23px;
+  padding: 5px 14px;
+  height:36px;
+  display:flex;
+  align-items: center;
+  text-align: center;
+  background-color: $black;
+  color: white;
+  border-radius: 50px;
+}

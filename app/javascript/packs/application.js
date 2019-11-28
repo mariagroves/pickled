@@ -1,8 +1,8 @@
 import "bootstrap";
 import { touch } from '../components/touch';
 touch();
-import { hold } from '../components/touch';
-hold();
+// import { hold } from '../components/touch';
+// hold();
 
 $(document).ready(function(){
   $(".category-choice").click(function(){

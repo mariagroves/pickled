@@ -1,2 +1,38 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row bubbles-row">
+    <div class="bubble green"
+    data-aos="fade-up"
+    data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="2000">
+      Puzzled <br> in a pickle?
+    </div>
+
+    <div class="d-flex justify-content-end w-100"
+    data-aos="fade-up"
+    data-aos-offset="200"
+    data-aos-delay="1000"
+    data-aos-duration="2000">
+      <div class="bubble pink">
+        Can’t come up <br>with a decision?
+      </div>
+    </div>
+
+    <div class="bubble purple"
+    data-aos="fade-up"
+    data-aos-offset="200"
+    data-aos-delay="2000"
+    data-aos-duration="2000">
+      Ask the<br> community!
+    </div>
+
+    <div class="d-flex justify-content-end w-100"
+    data-aos="fade-up"
+    data-aos-offset="200"
+    data-aos-delay="3000"
+    data-aos-duration="2000">
+    <%= link_to "Browse the pickles", fake_log_in_path, class: "big-button-dash", method: :post %>
+  </div>
+
+
+</div>
