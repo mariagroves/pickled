@@ -19,25 +19,25 @@ const touch = () => {
 
 export { touch };
 
-const hold = () => {
-  const holdImage = document.querySelectorAll(".card-touch");
-  holdImage.forEach((image) => {
-    const manager = new Hammer.Manager(image);
-    const Press = new Hammer.Press({
-      time: 500
-    });
+// const hold = () => {
+//   const holdImage = document.querySelectorAll(".card-touch");
+//   holdImage.forEach((image) => {
+//     const manager = new Hammer.Manager(image);
+//     const Press = new Hammer.Press({
+//       time: 500
+//     });
 
-    manager.add(Press);
+//     manager.add(Press);
 
-    manager.on('press pressup', function(e) {
-      if (e.type == "press"){
-        e.target.classList.add('expand');
-      }
-      if (e.type =="pressup"){
-        e.target.classList.remove('expand');
-      }
-    });
-  });
-}
+//     manager.on('press pressup', function(e) {
+//       if (e.type == "press"){
+//         e.target.classList.add('expand');
+//       }
+//       if (e.type =="pressup"){
+//         e.target.classList.remove('expand');
+//       }
+//     });
+//   });
+// }
 
-export { hold };
+// export { hold };
