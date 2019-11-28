@@ -13,7 +13,7 @@ class PostVote < ApplicationRecord
   belongs_to :user
   belongs_to :post_option
   validate :one_vote_per_post
-  validate :vote_own_post
+  # validate :vote_own_post
 
   def one_vote_per_post
     votes = user.own_votes.joins(:post_option).where('post_options.post_id = ?', post_option.post.id)
