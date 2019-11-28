@@ -568,7 +568,7 @@ POSTS.each do |post_params|
   # p post.categories
 
   #generating one comment per user
-  number = rand(10..40)
+  number = rand(1..10)
   puts "Generating comments"
   User.all.sample(number).each do |user|
     comment = Comment.new(content: Faker::TvShows::Community.quotes)
