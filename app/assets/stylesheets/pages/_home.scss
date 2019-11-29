@@ -2,7 +2,42 @@
 .homepage {
   margin-bottom: 0px;
 }
-.bubbles-row {
+
+
+.homepage-1 {
+  position: fixed;
+  top: 64px;
+  left: 10px;
+}
+
+.homepage-1half {
+  position: fixed;
+  top: 0px;
+  right: -100px;
+}
+
+.homepage-2 {
+  position: fixed;
+  top: 142px;
+  right: 10px;
+}
+
+.homepage-3 {
+  position: fixed;
+  top: 237px;
+  left: 10px;
+}
+
+.homepage-4 {
+  position: fixed;
+  top: 240px;
+  right: -10px;
+}
+
+.homepage-button {
+  position: fixed;
+  top: 470px;
+  left: 40px;
 }
 
 .bubble {
@@ -37,7 +72,6 @@
 .big-button-dash {
   font-family: $my-font;
   font-size: 20px;
-  margin-top:20px;
   line-height: 23px;
   padding: 5px 14px;
   height:36px;

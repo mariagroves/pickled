@@ -1,11 +1,10 @@
-
-<div class="navbar fixed-top navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar fixed-top navbar-expand-sm navbar-light navbar-lewagon" style=" <%= (controller_name == "pages" && action_name == "home") ? "background: none" : "" %> ">
   <div class="navbar-container-line">
     <div class="navbar-container">
       <%= link_to posts_path do %>
-        <div class="pickled-logo">
-          PICKLED
-        </div>
+      <div class="pickled-logo">
+        <%= render "shared/pickle-logo" %>
+      </div>
       <% end %>
           <% if controller_name == "posts" %>
             <% case %>
@@ -94,7 +93,8 @@
           <% end %>
 
     </div>
-    <div class="navbar-line"></div>
+
+    <div class="navbar-line" style=" <%= (controller_name == "pages" && action_name == "home") ? "display: none" : "" %> "></div>
   </div>
 </div>
 

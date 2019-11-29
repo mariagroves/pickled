@@ -25,17 +25,13 @@
 }
 
 .pickled-logo {
-  margin-left: 10px;
+  margin-left: 11px;
   height: 36px;
   display:flex;
   align-items:center;
-  font-family: $my-font;
-  font-size: 20px;
   line-height: 23px;
-  padding: 5px 12px;
-  background-color: $pickle;
+  padding: 5px 0px;
   color: white;
-  border-radius: 50px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -85,6 +81,7 @@
 }
 
 .dropdown-menu {
+  margin-top:10px;
   background-color: rgba(0,0,0,0);
   border:none;
 }
