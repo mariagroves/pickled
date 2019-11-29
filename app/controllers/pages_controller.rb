@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end
 
   def fake_log_in
-    user = User.create(email: "fakeuser#{User.last.id + 1}@fakeemail.com", username: "Pickle#{User.last.id + 1}", password: "123456", image: "https://i.imgur.com/7B5ATLJ.jpg", bio: "Anonymous user")
+    user = User.create(email: "fakeuser#{User.last.id + 1}@fakeemail.com", username: "Pickle#{User.last.id + 1}", password: "123456", image: "https://i.imgur.com/ruyni7I.jpg", bio: "Anonymous user")
     sign_in(user)
     redirect_to posts_path
   end

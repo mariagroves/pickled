@@ -1,37 +1,48 @@
 <div class="container homepage">
-  <div class="row bubbles-row">
-    <div class="bubble green"
+    <div class="homepage-1"
     data-aos="fade-up"
     data-aos-offset="-100"
-    data-aos-delay="50"
+    data-aos-delay="0"
     data-aos-duration="2000">
-       In a pickle?
+       <%= render "shared/homepage-1" %>
     </div>
 
-    <div class="d-flex justify-content-end w-100"
+    <div class="homepage-1half"
+    data-aos="fade-left"
+    data-aos-offset="-100"
+    data-aos-delay="0"
+    data-aos-duration="2000">
+       <%= render "shared/homepage-1half" %>
+    </div>
+
+    <div class="homepage-2"
     data-aos="fade-up"
     data-aos-offset="-100"
-    data-aos-delay="1000"
+    data-aos-delay="1500"
     data-aos-duration="2000">
-      <div class="bubble pink">
-        Can’t come up <br>with a decision?
-      </div>
+       <%= render "shared/homepage-2" %>
     </div>
 
-    <div class="bubble purple"
+    <div class="homepage-3"
     data-aos="fade-up"
     data-aos-offset="-100"
-    data-aos-delay="2000"
+    data-aos-delay="2500"
     data-aos-duration="2000">
-      Ask the<br> community!
+      <%= render "shared/homepage-3" %>
     </div>
 
-    <div class="d-flex justify-content-end w-100"
+        <div class="homepage-4"
+    data-aos="fade-up"
+    data-aos-offset="-100"
+    data-aos-delay="2800"
+    data-aos-duration="2000">
+      <%= render "shared/homepage-4" %>
+    </div>
+
+    <div class="homepage-button"
     data-aos="fade-up"
     data-aos-offset="-100"
     data-aos-delay="3000"
     data-aos-duration="2000">
       <%= link_to "Browse the pickles", fake_log_in_path, class: "big-button-dash", method: :post %>
     </div>
-
-</div>
