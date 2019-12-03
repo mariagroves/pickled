@@ -16,9 +16,6 @@ User.destroy_all
 #size is used later many times
 
 
-
-puts "Finished creating users"
-
 puts "Creating categories"
 
 nature = Category.create(
@@ -220,7 +217,7 @@ post6.save!
 francois_posts = [post1, post2, post3, post4, post5, post6]
 
 francois_posts.each do |post|
-  number = rand(100...500)
+  number = rand(20...50)
   User.all.sample(number).each do |user|
     vote = post.post_options.sample.post_votes.build(user: user)
     vote.save! unless user == user1
@@ -238,7 +235,7 @@ puts "Finished creating posts, post categories and post options"
 
 puts "Finished creating presentation user"
 
-SIZE = 1200
+SIZE = 100
 
 puts "Creating users..."
 #random users
@@ -246,6 +243,8 @@ SIZE.times do |n|
 username = Faker::Games::Pokemon.name
   User.create(email: "user#{n}@lewagon.com", password: "123456", username: username, bio: "I am awesome", image: "https://i.imgur.com/7B5ATLJ.jpg")
 end
+
+puts "Finished creating users"
 
 puts "Creating posts, post categories and post options"
 
@@ -743,7 +742,7 @@ POSTS.each do |post_params|
   post.save!
 
   # build votes
-  number_votes = rand(800..1200)
+  number_votes = rand(30..50)
   puts "Generating post votes"
   User.where.not(email: 'francois@lewagon.com').sample(number_votes).each do |user|
     vote = post.post_options.sample.post_votes.build(user: user)
@@ -764,6 +763,3 @@ POSTS.each do |post_params|
 end
   puts "Finished creating posts, post categories and post options"
   puts "Finished creating votes"
-
-
-
