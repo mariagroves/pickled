@@ -51,7 +51,7 @@ travel = Category.create(
 )
 
 
-puts "Finished creating categories
+puts "Finished creating categories"
 
 # puts "Creating presentation user"
 #   user1 = User.new(
