@@ -51,7 +51,7 @@ travel = Category.create(
 )
 
 
-puts "Finished creating categories"
+puts "Finished creating categories
 
 # puts "Creating presentation user"
 #   user1 = User.new(
@@ -234,6 +234,7 @@ puts "Finished creating categories"
 # puts "Finished creating posts, post categories and post options"
 
 # puts "Finished creating presentation user"
+
 
 SIZE = 100
 
@@ -742,7 +743,9 @@ POSTS.each do |post_params|
   post.save!
 
   # build votes
+
   number_votes = rand(10..30)
+
   puts "Generating post votes"
   User.where.not(email: 'francois@lewagon.com').sample(number_votes).each do |user|
     vote = post.post_options.sample.post_votes.build(user: user)
@@ -763,6 +766,3 @@ POSTS.each do |post_params|
 end
   puts "Finished creating posts, post categories and post options"
   puts "Finished creating votes"
-
-
-
