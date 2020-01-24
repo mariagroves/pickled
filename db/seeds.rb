@@ -51,189 +51,190 @@ travel = Category.create(
 )
 
 
-puts "Finished creating categories"
+puts "Finished creating categories
 
-puts "Creating presentation user"
-  user1 = User.new(
-    email: "francois@lewagon.com",
-    password: "123456",
-    username: "derivant",
-    bio: "François Andrivet 🌐",
-    image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/67880897_184160475943546_4137163275632583723_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=110&oh=35d051c53d7938a026d06d37854582c3&oe=5E84CBB0"
-  )
+# puts "Creating presentation user"
+#   user1 = User.new(
+#     email: "francois@lewagon.com",
+#     password: "123456",
+#     username: "derivant",
+#     bio: "François Andrivet 🌐",
+#     image: "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/67880897_184160475943546_4137163275632583723_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=110&oh=35d051c53d7938a026d06d37854582c3&oe=5E84CBB0"
+#   )
 
-  user1.save!
+#   user1.save!
 
-  puts "Creating posts, post categories and post options"
-
-
-post1 = Post.new(
-  title: "I'm in Seoul! Should I eat street food or a restaurant meal?",
-  description: "Only one evening here, gotta make the right choice.",
-  kind: "photo"
-)
-
-post2 = Post.new(
-  title: "Which USA national park should I go to next summer?",
-  description: "Yosemite or Joshua Tree???",
-  kind: "photo"
-)
-
-post3 = Post.new(
-  title: "What's a popular design trend rn: isometric or 3D?",
-  kind: "photo"
-)
-
-post4 = Post.new(
-  title: "Thinking of getting a piercing...help me decide!!",
-  description: "I'm thinking septum or nipple",
-  kind: "photo"
-)
-
-post5 = Post.new(
-  title: "Need a new suitcase, which should I get?",
-  description: "Hello Kitty or Eagle Creek??",
-  kind: "photo"
-)
-
-post6 = Post.new(
-  title: "Getting into weight lifting, pick a protein shake",
-  kind: "photo"
-)
-
-post1.user = user1
-post2.user = user1
-post3.user = user1
-post4.user = user1
-post5.user = user1
-post6.user = user1
-
-post_category1 = PostCategory.new
-post_category2 = PostCategory.new
-post_category3 = PostCategory.new
-post_category4 = PostCategory.new
-post_category5 = PostCategory.new
-post_category6 = PostCategory.new
+#   puts "Creating posts, post categories and post options"
 
 
-post_option1 = PostOption.new
-post_option2 = PostOption.new
-post_option3 = PostOption.new
-post_option4 = PostOption.new
-post_option5 = PostOption.new
-post_option6 = PostOption.new
-post_option7 = PostOption.new
-post_option8 = PostOption.new
-post_option9 = PostOption.new
-post_option10 = PostOption.new
-post_option11 = PostOption.new
-post_option12 = PostOption.new
+# post1 = Post.new(
+#   title: "I'm in Seoul! Should I eat street food or a restaurant meal?",
+#   description: "Only one evening here, gotta make the right choice.",
+#   kind: "photo"
+# )
 
-post_category1.post = post1
-post_category1.category = food
+# post2 = Post.new(
+#   title: "Which USA national park should I go to next summer?",
+#   description: "Yosemite or Joshua Tree???",
+#   kind: "photo"
+# )
 
-post_category2.post = post2
-post_category2.category = nature
+# post3 = Post.new(
+#   title: "What's a popular design trend rn: isometric or 3D?",
+#   kind: "photo"
+# )
 
-post_category3.post = post3
-post_category3.category = work
+# post4 = Post.new(
+#   title: "Thinking of getting a piercing...help me decide!!",
+#   description: "I'm thinking septum or nipple",
+#   kind: "photo"
+# )
 
-post_category4.post = post4
-post_category4.category = fashion
+# post5 = Post.new(
+#   title: "Need a new suitcase, which should I get?",
+#   description: "Hello Kitty or Eagle Creek??",
+#   kind: "photo"
+# )
 
-post_category5.post = post5
-post_category5.category = travel
+# post6 = Post.new(
+#   title: "Getting into weight lifting, pick a protein shake",
+#   kind: "photo"
+# )
 
-post_category6.post = post6
-post_category6.category = lifestyle
+# post1.user = user1
+# post2.user = user1
+# post3.user = user1
+# post4.user = user1
+# post5.user = user1
+# post6.user = user1
 
-post_option1.post = post1
-url1 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/52482978_416611035577181_5149025536661225078_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=105&oh=0c5ab7a2545cacaffebb1a3ea0f05c42&oe=5E67BDD2'
-post_option1.remote_image_url = url1
-post_option2.post = post1
-url2 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/78991866_169050917628847_2627892716956482105_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=107&oh=7159657ad87bc4300f086761ce80a2b6&oe=5E7FD50E'
-post_option2.remote_image_url = url2
+# post_category1 = PostCategory.new
+# post_category2 = PostCategory.new
+# post_category3 = PostCategory.new
+# post_category4 = PostCategory.new
+# post_category5 = PostCategory.new
+# post_category6 = PostCategory.new
 
-post_option3.post = post2
-url9 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/71668853_133182678103911_7058803033415331104_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&oh=3b1f42ca66c4b6ac92e89b3eed0ce598&oe=5E6597B5'
-post_option3.remote_image_url = url9
-url10 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/77238288_156069949084473_7678285553322858758_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=109&oh=1cf693b01e9389d0e88805ff8999d8c8&oe=5E8BB770'
-post_option4.post = post2
-post_option4.remote_image_url = url10
 
-post_option5.post = post3
-url3 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/66950403_2525085447728643_5518845314064364736_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&oh=fe8ff7a162da4ea1923147a7f8b76e18&oe=5E6A1AD9'
-post_option5.remote_image_url = url3
-post_option6.post = post3
-url4 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/74603480_441134383266338_4354655760555739668_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=102&oh=b816fed814315cafe34b42be4cbcf9c7&oe=5E7F2AED'
-post_option6.remote_image_url = url4
+# post_option1 = PostOption.new
+# post_option2 = PostOption.new
+# post_option3 = PostOption.new
+# post_option4 = PostOption.new
+# post_option5 = PostOption.new
+# post_option6 = PostOption.new
+# post_option7 = PostOption.new
+# post_option8 = PostOption.new
+# post_option9 = PostOption.new
+# post_option10 = PostOption.new
+# post_option11 = PostOption.new
+# post_option12 = PostOption.new
 
-post_option7.post = post4
-url5 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/41769403_315011945981056_2998788195636364420_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=03dd1b3b44d1e099daaa2c098c0ccc12&oe=5E84E1AF'
-post_option7.remote_image_url = url5
-post_option8.post = post4
-url6 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/68712457_2377776679137482_9202471327991277262_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=102&oh=9c1c242cc189b36ebb77fd793ce2f5af&oe=5E68C312'
-post_option8.remote_image_url = url6
+# post_category1.post = post1
+# post_category1.category = food
 
-post_option9.post = post5
-url7 = "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/74478984_278136933143560_4528491142298255586_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=a2cab5b8a5dd10cf27362553457be68a&oe=5E66FB54"
-post_option9.remote_image_url = url7
-post_option10.post = post5
-url8 = "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/73306113_561768584649683_2239240180375553019_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=111&oh=b8273c2c0669f14b9b3212f481d05bd1&oe=5E893C37"
-post_option10.remote_image_url = url8
+# post_category2.post = post2
+# post_category2.category = nature
 
-post_option11.post = post6
-post_option11.remote_image_url = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/74962056_556566678254623_8035701209287752410_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=107&oh=13414d121b3fa33208c704a5d7d62dc7&oe=5E703171'
-post_option12.post = post6
-post_option12.remote_image_url = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/75371311_491370828253544_6780419175100329093_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=108&oh=19752221e3b99f073bcc9cc9123e3bc4&oe=5E807BE4'
+# post_category3.post = post3
+# post_category3.category = work
 
-post_category1.save!
-post_category2.save!
-post_category3.save!
-post_category4.save!
-post_category5.save!
-post_category6.save!
+# post_category4.post = post4
+# post_category4.category = fashion
 
-post_option1.save!
-post_option2.save!
-post_option3.save!
-post_option4.save!
-post_option5.save!
-post_option6.save!
-post_option7.save!
-post_option8.save!
-post_option9.save!
-post_option10.save!
-post_option11.save!
-post_option12.save!
+# post_category5.post = post5
+# post_category5.category = travel
 
-post1.save!
-post2.save!
-post3.save!
-post4.save!
-post5.save!
-post6.save!
+# post_category6.post = post6
+# post_category6.category = lifestyle
 
-francois_posts = [post1, post2, post3, post4, post5, post6]
+# post_option1.post = post1
+# url1 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/52482978_416611035577181_5149025536661225078_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=105&oh=0c5ab7a2545cacaffebb1a3ea0f05c42&oe=5E67BDD2'
+# post_option1.remote_image_url = url1
+# post_option2.post = post1
+# url2 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/78991866_169050917628847_2627892716956482105_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=107&oh=7159657ad87bc4300f086761ce80a2b6&oe=5E7FD50E'
+# post_option2.remote_image_url = url2
 
-francois_posts.each do |post|
-  number = rand(20...50)
-  User.all.sample(number).each do |user|
-    vote = post.post_options.sample.post_votes.build(user: user)
-    vote.save! unless user == user1
-  end
+# post_option3.post = post2
+# url9 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/71668853_133182678103911_7058803033415331104_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&oh=3b1f42ca66c4b6ac92e89b3eed0ce598&oe=5E6597B5'
+# post_option3.remote_image_url = url9
+# url10 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/77238288_156069949084473_7678285553322858758_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=109&oh=1cf693b01e9389d0e88805ff8999d8c8&oe=5E8BB770'
+# post_option4.post = post2
+# post_option4.remote_image_url = url10
 
-  User.all.sample(number).each do |user|
-    comment = Comment.new(content: Faker::TvShows::Community.quotes)
-    comment.post = post
-    comment.user = user
-    comment.save! unless user == user1
-  end
-end
+# post_option5.post = post3
+# url3 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/66950403_2525085447728643_5518845314064364736_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=103&oh=fe8ff7a162da4ea1923147a7f8b76e18&oe=5E6A1AD9'
+# post_option5.remote_image_url = url3
+# post_option6.post = post3
+# url4 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/74603480_441134383266338_4354655760555739668_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=102&oh=b816fed814315cafe34b42be4cbcf9c7&oe=5E7F2AED'
+# post_option6.remote_image_url = url4
 
-puts "Finished creating posts, post categories and post options"
+# post_option7.post = post4
+# url5 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/41769403_315011945981056_2998788195636364420_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=03dd1b3b44d1e099daaa2c098c0ccc12&oe=5E84E1AF'
+# post_option7.remote_image_url = url5
+# post_option8.post = post4
+# url6 = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/68712457_2377776679137482_9202471327991277262_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=102&oh=9c1c242cc189b36ebb77fd793ce2f5af&oe=5E68C312'
+# post_option8.remote_image_url = url6
 
-puts "Finished creating presentation user"
+# post_option9.post = post5
+# url7 = "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/74478984_278136933143560_4528491142298255586_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=104&oh=a2cab5b8a5dd10cf27362553457be68a&oe=5E66FB54"
+# post_option9.remote_image_url = url7
+# post_option10.post = post5
+# url8 = "https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/73306113_561768584649683_2239240180375553019_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=111&oh=b8273c2c0669f14b9b3212f481d05bd1&oe=5E893C37"
+# post_option10.remote_image_url = url8
+
+# post_option11.post = post6
+# post_option11.remote_image_url = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/74962056_556566678254623_8035701209287752410_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=107&oh=13414d121b3fa33208c704a5d7d62dc7&oe=5E703171'
+# post_option12.post = post6
+# post_option12.remote_image_url = 'https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/75371311_491370828253544_6780419175100329093_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=108&oh=19752221e3b99f073bcc9cc9123e3bc4&oe=5E807BE4'
+
+# post_category1.save!
+# post_category2.save!
+# post_category3.save!
+# post_category4.save!
+# post_category5.save!
+# post_category6.save!
+
+# post_option1.save!
+# post_option2.save!
+# post_option3.save!
+# post_option4.save!
+# post_option5.save!
+# post_option6.save!
+# post_option7.save!
+# post_option8.save!
+# post_option9.save!
+# post_option10.save!
+# post_option11.save!
+# post_option12.save!
+
+# post1.save!
+# post2.save!
+# post3.save!
+# post4.save!
+# post5.save!
+# post6.save!
+
+# francois_posts = [post1, post2, post3, post4, post5, post6]
+
+# francois_posts.each do |post|
+#   number = rand(100...500)
+#   User.all.sample(number).each do |user|
+#     vote = post.post_options.sample.post_votes.build(user: user)
+#     vote.save! unless user == user1
+#   end
+
+#   User.all.sample(number).each do |user|
+#     comment = Comment.new(content: Faker::TvShows::Community.quotes)
+#     comment.post = post
+#     comment.user = user
+#     comment.save! unless user == user1
+#   end
+# end
+
+# puts "Finished creating posts, post categories and post options"
+
+# puts "Finished creating presentation user"
+
 
 SIZE = 100
 
@@ -742,7 +743,9 @@ POSTS.each do |post_params|
   post.save!
 
   # build votes
-  number_votes = rand(30..50)
+
+  number_votes = rand(10..30)
+
   puts "Generating post votes"
   User.where.not(email: 'francois@lewagon.com').sample(number_votes).each do |user|
     vote = post.post_options.sample.post_votes.build(user: user)
